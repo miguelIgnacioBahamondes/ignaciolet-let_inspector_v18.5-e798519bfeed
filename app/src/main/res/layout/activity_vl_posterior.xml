@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutE1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="Posterior"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text=""
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnVolverPvpMQ"
+            style="@android:style/Widget.Button"
+            android:layout_width="136dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/btnVolerSecPvpMQ"
+            android:background="@drawable/boto_redondoselect"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver "
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnVolerSecPvpMQ"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/btnVolverPvpMQ"
+            android:text="Volver a Secciones"
+            android:textColor="@android:color/background_light"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSiguientePoE"
+            style="@android:style/Widget.Button"
+            android:layout_width="1200dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnVolerSecPvpMQ"
+            android:layout_toEndOf="@+id/btnVolerSecPvpMQ"
+            android:background="@drawable/boto_redondoselect"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textView4"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView3">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnSeccionPos1E"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 1: Toma de Fotos Obligatorias"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <Button
+                            android:id="@+id/btnPosteriorE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="Foto Posterior"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone"
+                            />
+                        <TextView
+                            android:id="@+id/textCant1"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnPosteriorE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPost"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant1"
+                            android:layout_toEndOf="@+id/textCant1"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageViewFotoPoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/btnLogoLunetaE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="9dp"
+                            android:text="Foto Logo Luneta"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone"
+                            />
+                        <TextView
+                            android:id="@+id/textCant2"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnLogoLunetaE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPost2"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant2"
+                            android:layout_toEndOf="@+id/textCant2"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageLogoLunetaE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnFotoAdiocionalE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="9dp"
+                            android:text="Foto Adicional"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+                        <TextView
+                            android:id="@+id/textCant3"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnFotoAdiocionalE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPost3"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant3"
+                            android:layout_toEndOf="@+id/textCant3"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/imageFotoAdicionalE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/seccionPos2E"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 2: Daños"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtPieza"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pieza:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinnerPiezaPoE"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:textAlignment="gravity"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/txtTipoDanoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tipo de Daño:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDanoPoE"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:textAlignment="gravity"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/txtDeducibleE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Deducible:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDeduciblePoE"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone" />
+                    
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnFotoDanoE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="9dp"
+                            android:text="Fotografiar"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCantS"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnFotoDanoE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPostS"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCantS"
+                            android:layout_toEndOf="@+id/textCantS"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/imagenPoDanoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+
+                    <Button
+                        android:id="@+id/seccionPos3E"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 3: Accesorios"
+                        android:textSize="18sp" />
+
+
+                    <TextView
+                        android:id="@+id/textArrastre"
+                        android:layout_width="match_parent"
+                        android:text="Sistema de Arrastre"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        />
+
+                    <CheckBox
+                        android:id="@+id/cocoPoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Coco Arrastre"
+                        android:visibility="gone"
+                        />
+
+                    <!--<ImageView
+                        android:id="@+id/imageCocoPoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        />-->
+
+                    <CheckBox
+                        android:id="@+id/muelaPoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Muela Enganche"
+                        android:visibility="gone"
+                        />
+
+                    <!--<ImageView
+                        android:id="@+id/imageMuelaE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                         />-->
+
+                    <CheckBox
+                        android:id="@+id/enchufeRemolque"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enchufe Remolque"
+                        android:visibility="gone"
+                        />
+
+                    <!--<ImageView
+                        android:id="@+id/imageenChufeRemolque"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                      />-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                        android:id="@+id/btnSistArrastre"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="230dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/boton_redondo"
+                        android:drawableLeft="@android:drawable/ic_menu_camera"
+                        android:drawablePadding="8dp"
+                        android:text="Foto Sistema Arrastre"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="14sp"
+                        android:visibility="gone"
+                        />
+
+                        <TextView
+                            android:id="@+id/textCantA"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/textCantF"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPostA"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCantA"
+                            android:layout_toEndOf="@+id/textCantA"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/imageViewSistArrastre"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+
+                        />
+
+                    <View
+                        android:id="@+id/linea"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:visibility="gone"/>
+
+                    <!--<Button
+                        android:id="@+id/seccionPos3MQ"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 3.1: Accesorios"
+                        android:textSize="18sp" />-->
+                    <CheckBox
+                        android:id="@+id/sensoresPoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sensores retroceso"
+                        android:visibility="gone"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageSensores"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <CheckBox
+                        android:id="@+id/camaraPoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Camara Trasera"
+                        android:visibility="gone"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageCameraPoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        />
+
+
+                    <CheckBox
+                        android:id="@+id/equipoPoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Equipo de frío"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageEquipoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/border" />
+
+                    <CheckBox
+                        android:id="@+id/camaraRefriPoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cámara Refrigerada"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageCamRePoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/border" />
+
+                    <CheckBox
+                        android:id="@+id/cubrePickPoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cubre pick up"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageCubrePickPoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/border" />
+
+                    <CheckBox
+                        android:id="@+id/tapaRiPoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tapa rígida pick up"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageTapaRPoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/border" />
+
+                    <CheckBox
+                        android:id="@+id/LonaCubrePoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lona cubre pick up"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageLonaCPoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/border" />
+
+                    <CheckBox
+                        android:id="@+id/cajaHerrPoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Caja herramientas apernada"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageCajaHerrPoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/border" />
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

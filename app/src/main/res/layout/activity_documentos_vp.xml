@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehPesado.Fotos.documentos_vp">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutE1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="DOCUMENTOS"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text=""
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnVolverPvpMQ"
+            style="@android:style/Widget.Button"
+            android:layout_width="136dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/btnVolerSecPvpMQ"
+            android:background="@drawable/boto_redondoselect"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver "
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnVolerSecPvpMQ"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:textColor="@android:color/background_light"
+            android:layout_toEndOf="@+id/btnVolverPvpMQ"
+            android:text="Volver a Secciones"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSiguientePvpMQ"
+            style="@android:style/Widget.Button"
+            android:layout_width="1200dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnVolerSecPvpMQ"
+            android:layout_toEndOf="@+id/btnVolerSecPvpMQ"
+            android:background="@drawable/boto_redondoselect"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textView4"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView3">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/btnSeccionUnoPosteriorvpMQ"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 1: Toma de Fotos Obligatorias"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnPosteriorVP"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:text="Foto Documento anverso"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCantA"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnPosteriorVP"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPostA"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCantA"
+                            android:layout_toEndOf="@+id/textCantA"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+                    </LinearLayout>
+
+
+
+                    <ImageView
+                        android:id="@+id/imageViewFotoPvpMQ"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnFotoAdiocionalPvpMQ"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:text="Foto Documento reverso"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+
+
+                        <TextView
+                            android:id="@+id/textCantD"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnFotoAdiocionalPvpMQ"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPostD"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCantD"
+                            android:layout_toEndOf="@+id/textCantD"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageFotoAdicionalPvpMQ"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/btnPosteriorVP2"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:text="Foto Informe Anverso"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+                        <TextView
+                            android:id="@+id/textCantB"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnPosteriorVP2"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPostB"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCantB"
+                            android:layout_toEndOf="@+id/textCantB"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/imageViewFotoPvpMQ2"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnPosteriorVP3"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:text="Foto Informe Reverso"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCantC"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnPosteriorVP3"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPostC"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCantC"
+                            android:layout_toEndOf="@+id/textCantC"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageViewFotoPvpMQ3"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+            </ScrollView>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
+

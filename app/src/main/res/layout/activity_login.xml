@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.LoginActivity"
+    android:background="#fff">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#fff">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_let2"
+                android:contentDescription="@string/logo_login"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_marginTop="50dp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textColorHint="#999966"
+            android:background="@drawable/edittextstyle"
+            android:id="@+id/usuarioM"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:hint="Usuario Inspector"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textColorHint="#999966"
+            android:background="@drawable/edittextstyle"
+            android:layout_marginTop="10dp"
+            android:id="@+id/contrasenaM"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:hint="Contraseña"
+            android:inputType="textPassword" />
+
+        <Button
+            android:textColor="#000000"
+            android:background="@drawable/buttonstyleselect"
+            android:id="@+id/btnlogin"
+            android:layout_width="320dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="70dp"
+            android:layout_gravity="center"
+            android:text="Ingresar" />
+
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

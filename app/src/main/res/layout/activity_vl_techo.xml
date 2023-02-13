@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehLiviano.Fotos.vl_techo">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="Techo"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text=""
+            android:textSize="24sp"/>
+
+        <Button
+            android:id="@+id/btnTechoVolverE"
+            style="@android:style/Widget.Button"
+            android:layout_width="136dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/btnVolverSecTechoE"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnVolverSecTechoE"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/btnTechoVolverE"
+            android:text="Volver a Secciones"
+            android:textSize="12sp"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/btnSiguienteTechoE"
+            style="@android:style/Widget.Button"
+            android:layout_width="1200dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnVolverSecTechoE"
+            android:layout_toEndOf="@+id/btnVolverSecTechoE"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textSize="18sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textView13"
+            android:layout_below="@+id/textView12">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/btnSeccionDosTechoE"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 1: Daños"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtPieza"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pieza:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinnerPiezaTechoE"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/txtTipoDanoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tipo de Daño:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDanoTechoE"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/txtDeducibleE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Deducible:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDeducibleTechoE"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnFotoDanoTechoE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:textColor="@android:color/background_light"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:text="Fotografiar"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCantT"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnFotoDanoTechoE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPostT"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCantT"
+                            android:layout_toEndOf="@+id/textCantT"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+
+                    </LinearLayout>
+
+
+
+                    <ImageView
+                        android:id="@+id/imagenTechoDanoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnSeccionTres"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:text="Sección 2: Accesorios"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnSisTecho"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="Foto Techo"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/textCanTecho"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnSisTecho"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPosTecho"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCanTecho"
+                            android:layout_toEndOf="@+id/textCanTecho"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+
+                    </LinearLayout>
+                    <ImageView
+                        android:id="@+id/imageViewSistTecho"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+
+                        />
+
+                    <CheckBox
+                        android:id="@+id/barraPortaEquipajeE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Barra Porta Equipaje"
+                        android:visibility="gone"
+                        />
+                    <TextView
+                        android:id="@+id/textView102"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Marca:"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/maBarras"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        android:visibility="gone"/>
+
+                    <!--<ImageView
+                        android:id="@+id/imageBarraPortaEquipajeE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        />-->
+
+                    <CheckBox
+                        android:id="@+id/parrillaTechoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Parrilla"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView99"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Marca"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/maParrilla"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        android:visibility="gone"/>
+
+                    <!--<ImageView
+                        android:id="@+id/imageParrillaTechoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                         />-->
+
+
+                    <CheckBox
+                        android:id="@+id/portaEquipajeE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Porta Equipaje"
+                        android:visibility="gone"
+                         />
+                    <TextView
+                        android:id="@+id/textView103"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Marca:"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/maPorta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        android:visibility="gone"/>
+
+                    <!--<ImageView
+                        android:id="@+id/imagePortaEquipajeE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                         />-->
+
+                    <CheckBox
+                        android:id="@+id/portaSkyE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Porta Sky"
+                        android:visibility="gone"
+                         />
+                    <TextView
+                        android:id="@+id/textView104"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/maPortaSki"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        android:visibility="gone"/>
+
+                    <CheckBox
+                        android:id="@+id/sunroofE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sunroof"
+                        android:visibility="gone"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageSunroofE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtTipoSunroof"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tipo sunroof:"
+                        android:textColor="@android:color/black"
+                        android:visibility="gone"
+                        />
+                    <Spinner
+                        android:id="@+id/spinner_tipo_sunroof"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        />
+
+                    <!--<ImageView
+                        android:id="@+id/imagePortaSkyE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        />-->
+
+
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

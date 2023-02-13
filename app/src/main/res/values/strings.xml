@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">LET INSPECTOR</string>
+    <string name="URL_BASE">https://www.autoagenda.cl/movil/</string>
+    <string name="title_activity_frontal_vp">frontal_vp</string>
+    <string name="valor_id">valor_id</string>
+    <string name="texto">texto</string>
+    <string name="version">versión 1.1.8</string>
+
+
+    <string name="logo_login">Logo</string>
+    <string name="title_activity_foto_geolocalizacion">FotoGeolocalizacion</string>
+    <string name="title_activity_motor_vp">MotorVp</string>
+    <string name="title_activity_parabrisa_vp">ParabrisaVp</string>
+
+
+</resources>
+

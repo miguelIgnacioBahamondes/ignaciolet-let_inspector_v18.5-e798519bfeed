@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehPesado.ObsVpActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textOb"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:background="@android:color/holo_orange_dark"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Observaciones" />
+
+        <TextView
+            android:id="@+id/textObs1"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text=""
+            android:background="@android:color/holo_orange_dark"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnVolverObsVpJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="115dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/btnPenObsVpJg"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnPenObsVpJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_toEndOf="@+id/btnVolverObsVpJg"
+            android:text="Pendientes"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSigObsVpJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="1100dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnPenObsVpJg"
+            android:layout_toEndOf="@+id/btnPenObsVpJg"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textSize="18sp"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textObs1"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textOb">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="36dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView115"
+                        android:layout_width="match_parent"
+                        android:text="Observación 1 "
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/obs1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView117"
+                        android:layout_width="match_parent"
+                        android:text="Observación 2"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/obs2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView116"
+                        android:layout_width="match_parent"
+                        android:text="Observación 3"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/obs3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:imeOptions="actionDone"/>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

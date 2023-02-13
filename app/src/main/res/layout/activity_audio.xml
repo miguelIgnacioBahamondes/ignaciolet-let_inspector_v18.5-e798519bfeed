@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehLiviano.AudioActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textAu"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:background="@android:color/holo_orange_dark"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/background_dark"
+            android:text="Audio" />
+
+        <TextView
+            android:id="@+id/textAu1"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text=""
+            android:background="@android:color/holo_orange_dark"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnVolverAuJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="133dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/btnPenAuJg"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnPenAuJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_toEndOf="@+id/btnVolverAuJg"
+            android:text="Pendientes"
+            android:textSize="12sp"
+            android:visibility="invisible" />/>
+
+        <Button
+            android:id="@+id/btnSigAuJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="1100dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnPenAuJg"
+            android:layout_toEndOf="@+id/btnPenAuJg"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textSize="18sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textAu1"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textAu">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView36"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:text="Radio"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView37"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Panel:"
+                        android:layout_marginTop="10dp"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_panelR"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog" />
+
+                    <TextView
+                        android:id="@+id/textView38"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/marcaPanel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView39"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/modeloPanel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Tipo"
+                        android:layout_marginTop="10dp"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_tipoRadio"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog" />
+
+                    <TextView
+                        android:id="@+id/textView43"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:text="Parlantes"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView44"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/cantidadParlante"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView45"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/parlanteMarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView46"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/parlanteModelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView47"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:text="Antena"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/anteElectCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Eléctrica"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/radioTransCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Radiotransmisor" />
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tweeter"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/tweeterApernado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/cantidadTeewter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView51"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/marcaTeewter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView52"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/modeloTeewter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView53"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_tweeter"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog" />
+
+                    <TextView
+                        android:id="@+id/textView49"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Woofer"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkWoofer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:layout_marginTop="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView54"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/cantidadWoofer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView55"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/wooferMarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView56"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/wooferModelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView57"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_ubic_w"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog" />
+
+                    <TextView
+                        android:id="@+id/textView58"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Amplificador 1"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        />
+
+                    <CheckBox
+                        android:id="@+id/amplifi1check"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView63"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/cantidadampli1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView64"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ampli1marca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView65"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ampli1Modelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView66"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_amplif1"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog" />
+
+                    <TextView
+                        android:id="@+id/textView59"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Amplificador 2"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/amplifi2check"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView67"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/cantidadampli2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView68"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/amplimarca2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView69"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/amplimodelo2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView70"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_amplif2"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog" />
+
+                    <TextView
+                        android:id="@+id/textView60"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lector DVD"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/apernadoDvd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView71"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/dvdCantidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView72"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/dvdMarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView73"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/dvdModelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView74"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_lector"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog" />
+
+                    <TextView
+                        android:id="@+id/textView61"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pantalla"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/apernadoPantalla"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView75"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/pantallaCantidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView76"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/pantallaMarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView77"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/pantallaModelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView78"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_pantalla"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog" />
+
+                    <TextView
+                        android:id="@+id/textView62"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/background_dark"
+                        android:text="DVD Modular"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/apernadoDvdModular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView79"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/dvdModularCantidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+
+                    <TextView
+                        android:id="@+id/textView80"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/dvdModularmarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView81"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/dvdModularmodelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView82"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_dvd"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_marginTop="10dp"/>
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

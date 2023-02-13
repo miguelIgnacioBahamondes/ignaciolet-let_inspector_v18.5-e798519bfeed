@@ -1,0 +1,1703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehLiviano.Fotos.interior">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="189dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="Interior"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text=""
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnVolverInteriorE"
+            style="@android:style/Widget.Button"
+            android:layout_width="136dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/btnVolverSecInteriorE"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnVolverSecInteriorE"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/btnVolverInteriorE"
+            android:text="Volver a Secciones"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSiguienteInteriorE"
+            style="@android:style/Widget.Button"
+            android:layout_width="1200dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnVolverSecInteriorE"
+            android:layout_toEndOf="@+id/btnVolverSecInteriorE"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textSize="18sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textView15"
+            android:layout_below="@+id/textView14">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnSeccionUnoInterior"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 1: Toma de Fotos Obligatorias"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnPanelFueraInteE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="Foto Panel desde afuera"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCant19"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnPanelFueraInteE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/contPost19"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant19"
+                            android:layout_toEndOf="@+id/textCant19"
+                            android:background="@drawable/boton_redondo"
+                            android:text=""
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/imagePanelFueraInteE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnPanelDentroInteE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="Foto Panel desde adentro"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCant20"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnPanelDentroInteE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/contPost20"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant20"
+                            android:layout_toEndOf="@+id/textCant20"
+                            android:background="@drawable/boton_redondo"
+                            android:text=""
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/imagePanelDentroInteE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnRadioInteriorE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="Foto Radio"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCant21"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnPanelDentroInteE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/contPost21"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant21"
+                            android:layout_toEndOf="@+id/textCant21"
+                            android:background="@drawable/boton_redondo"
+                            android:text=""
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageRadioInteriorE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView37"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Panel:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinner_panelR"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Tipo:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinner_tipoRadio"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView38"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/marcaPanel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView39"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/modeloPanel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnKilometrajeE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="Foto Kilometraje"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCant22"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnKilometrajeE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/contPost22"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant22"
+                            android:layout_toEndOf="@+id/textCant22"
+                            android:background="@drawable/boton_redondo"
+                            android:text=""
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageKilometrajeE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textViewK"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ingrese kilometraje:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/Ekilometraje"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnAdicionalInteriorE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="Foto panel herramientas"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCant23"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnAdicionalInteriorE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/contPost23"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant23"
+                            android:layout_toEndOf="@+id/textCant23"
+                            android:background="@drawable/boton_redondo"
+                            android:text=""
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageAdicionalInteriorE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/luzCheckEngineE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Luz Check Engine"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/luzTestigoAirE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Luz Testigo Airbags"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/luzTestigoABS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="luz testigo ABS"
+                        android:visibility="gone" />
+
+
+                    <Button
+                        android:id="@+id/btnSeccionTresInterior"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 3: Accesorios"
+                        android:textSize="18sp" />
+
+
+                    <!-- <ImageView
+                        android:id="@+id/imageLuzCheckEngineE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />-->
+
+
+                    <!--<ImageView
+                        android:id="@+id/imageluzTestigoAirE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />-->
+
+                    <CheckBox
+                        android:id="@+id/controlCruceE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Control Crucero"
+                        android:visibility="gone" />
+
+                    <!--<ImageView
+                        android:id="@+id/imageControlCruceE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />-->
+
+
+                    <View
+                        android:id="@+id/linea"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/bluetoothE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bluetooth"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageBluetoothE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/tapizCueroE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tapiz Cuero"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageTapizCueroE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/butacaElectE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Butaca Eléctrica"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageButacaElectE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/cortaCorriE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Corta Corriente"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageCortaCorriE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <!--<TextView
+                        android:id="@+id/txtAlzavidrioE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alzavidrios Eléctrico"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                     />-->
+
+                    <CheckBox
+                        android:id="@+id/alzavidrioDeE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Alzavidrios eléctrico"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageAlzavidrioDeE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <!-- <CheckBox
+                        android:id="@+id/alzavidrioTrE"
+                        android:layout_width="266dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Alzavidrio Trasero"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageAlzavidrioTrE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />-->
+
+                    <CheckBox
+                        android:id="@+id/retroElectE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Retrovisores eléctricos"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageRetroElectE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/gpsE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="GPS"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageGpsE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnSeccionTresInteriorMQ"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 3.1: Accesorios"
+                        android:textSize="18sp" />
+
+
+                    <!--<TextView
+                        android:id="@+id/textView36"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:text="Radio"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        />-->
+
+
+                    <TextView
+                        android:id="@+id/textView43"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:text="Parlantes"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+
+                    <CheckBox
+                        android:id="@+id/parlantesE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Parlantes"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView44"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/cantidadParlante"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView45"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/parlanteMarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView46"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/parlanteModelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageParlantesE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView47"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:text="Antena"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/anteElectCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Eléctrica"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/radioTransCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Radiotransmisor"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:text="Tweeter"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <!--<CheckBox
+                        android:id="@+id/tweeterE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:visibility="gone"
+                         />-->
+
+                    <CheckBox
+                        android:id="@+id/tweeterApernado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Apernado"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/cantidadTeewter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView51"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/marcaTeewter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView52"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/modeloTeewter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView53"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+
+                    <Spinner
+                        android:id="@+id/spinner_tweeter"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone" />
+
+
+                    <ImageView
+                        android:id="@+id/imageTweeterE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView58"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:text="Amplificador 1"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <!--<CheckBox
+                        android:id="@+id/amplifiUnoE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:visibility="gone"
+                         />-->
+
+                    <CheckBox
+                        android:id="@+id/amplifi1check"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Apernado"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView63"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/cantidadampli1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView64"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/ampli1marca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView65"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/ampli1Modelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView66"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinner_amplif1"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone" />
+
+
+                    <ImageView
+                        android:id="@+id/imageAmplifiUnoE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView59"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:text="Amplificador 2"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/amplifiDosE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/amplifi2check"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Apernado"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView67"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/cantidadampli2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView68"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/amplimarca2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView69"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/amplimodelo2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView70"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinner_amplif2"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageAmplifiDosE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView49"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:text="Woofer"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <!--<CheckBox
+                        android:id="@+id/wooferE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:visibility="gone"
+                        />-->
+
+                    <CheckBox
+                        android:id="@+id/checkWoofer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Apernado"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView54"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/cantidadWoofer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView55"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/wooferMarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView56"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/wooferModelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView57"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinner_ubic_w"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone" />
+
+
+                    <ImageView
+                        android:id="@+id/imageWooferE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView61"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:text="Pantalla DVD"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <!--<CheckBox
+                        android:id="@+id/pantallaDvdE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:visibility="gone"
+                         />-->
+
+                    <CheckBox
+                        android:id="@+id/apernadoPantalla"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Apernado"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView75"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/pantallaCantidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView76"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/pantallaMarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView77"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/pantallaModelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView78"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinner_pantalla"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imagePantallaDvdE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+
+                    <Button
+                        android:id="@+id/btnSeccionOBD"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 4: Toma de Fotos OBD "
+                        android:textSize="18sp"
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnOBDE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="foto obd"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCant24"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnOBDE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/contPost24"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant24"
+                            android:layout_toEndOf="@+id/textCant24"
+                            android:background="@drawable/boton_redondo"
+                            android:text=""
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageOBDE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnLLavesE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="foto llaves"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCant25"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnLLavesE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/contPost25"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant25"
+                            android:layout_toEndOf="@+id/textCant25"
+                            android:background="@drawable/boton_redondo"
+                            android:text=""
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageLLavesE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <!--<TextView
+                        android:id="@+id/textView60"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lector DVD"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"/>
+
+                    <CheckBox
+                        android:id="@+id/apernadoDvd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/textView71"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/dvdCantidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/textView72"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/dvdMarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/textView73"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/dvdModelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/textView74"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_lector"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone"/>
+
+                    <ImageView
+                        android:id="@+id/imageLectorDvdE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        />-->
+
+                    <!--<TextView
+                        android:id="@+id/textView62"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/background_dark"
+                        android:text="DVD Modular"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"/>
+
+                    <CheckBox
+                        android:id="@+id/apernadoDvdModular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apernado"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/textView79"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/dvdModularCantidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        android:visibility="gone"/>
+
+
+                    <TextView
+                        android:id="@+id/textView80"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/dvdModularmarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/textView81"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Modelo"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/dvdModularmodelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/textView82"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ubicación:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_dvd"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"/>
+
+                    <ImageView
+                        android:id="@+id/imageModularDvd"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        />-->
+
+
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehLiviano.Fotos.llantasneumaticos">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textDet"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text=" Detalle de la Inspección"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textDetalle"
+            android:layout_width="500dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text=""
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"
+            />
+
+        <Button
+            android:id="@+id/btnVolverA"
+            style="@android:style/Widget.Button"
+            android:layout_width="115dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/relativeLayout3"
+            android:background="@drawable/boto_redondoselect"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            />
+
+        <Button
+            android:id="@+id/btnFallida"
+            style="@android:style/Widget.Button"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/btnVolverA"
+            android:background="@drawable/boto_redondoselect"
+            android:text="Declarar Fallida"
+            android:textColor="@android:color/background_light"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnInspeccionarM"
+            style="@android:style/Widget.Button"
+            android:layout_width="1100dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/relativeLayout3"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/btnFallida"
+            android:background="@drawable/boto_redondoselect"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Comenzar Inspección"
+
+            android:textColor="@android:color/background_light"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:id="@+id/eliminarOIMQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayout3"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_toEndOf="@+id/btnVolverA"
+            android:layout_toStartOf="@+id/btnInspeccionarM"
+            android:text="Eliminar OI"
+            android:layout_marginTop="10dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textDetalle"
+            android:layout_below="@+id/textDet"
+            android:id="@+id/relativeLayout3">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="4dip"
+                            android:padding="4dp"
+                            android:text="Compañia:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="10dp"/>
+
+
+                        <TextView
+                            android:id="@+id/compañiaMQ"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/textView3"
+                            android:layout_toEndOf="@+id/textView3"
+                            android:padding="4dp"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="4dip"
+                            android:padding="4dp"
+                            android:text="Corredor:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="10dp"/>
+
+
+                        <TextView
+                            android:id="@+id/corredorMQ"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/textView3"
+                            android:layout_toEndOf="@+id/textView3"
+                            android:padding="4dp"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="N oi :"
+                        android:padding="4dp"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/n_oim"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:padding="4dp"
+                        android:textColor="@android:color/background_dark"
+                        android:layout_alignTop="@+id/textView1"
+                        android:layout_toEndOf="@+id/textView1"
+                        />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/oi_pac"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="4dip"
+                            android:padding="4dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/background_dark"
+                            android:text="Pac :"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:id="@+id/pac"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:padding="4dp"
+                            android:textColor="@android:color/background_dark"
+                            android:layout_alignTop="@+id/oi_pac"
+                            android:layout_toEndOf="@+id/oi_pac"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="Patente :"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/background_dark"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/patenteM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:padding="4dp"
+                        android:textColor="@android:color/background_dark"
+                        android:layout_alignTop="@+id/textView2"
+                        android:layout_toEndOf="@+id/textView2"
+                        />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/txtMarca"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:text="Marca   :"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/background_dark"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:id="@+id/MarcaMQ"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:padding="4dp"
+                            android:textColor="@android:color/background_dark"
+                            android:layout_alignTop="@+id/txtMarca"
+                            android:layout_toEndOf="@+id/txtMarca"
+
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/txtModelo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:text="Modelo   :"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/background_dark"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:id="@+id/modeloMQ"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:padding="4dp"
+                            android:textColor="@android:color/background_dark"
+                            android:layout_alignTop="@+id/txtModelo"
+                            android:layout_toEndOf="@+id/txtModelo"
+
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:layout_marginRight="4dip"
+                        android:text="Ramo :"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/background_dark"
+                            android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tipoVehiculoM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:padding="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/background_dark"
+                        android:layout_alignTop="@+id/textView8"
+                        android:layout_toEndOf="@+id/textView8"
+                        />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:layout_marginRight="4dip"
+                        android:text="Asegurado :"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/background_dark" android:layout_marginTop="10dp"/>
+
+
+                    <TextView
+                        android:id="@+id/aseguradoM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:padding="4dp"
+                        android:textColor="@android:color/background_dark"
+                        android:layout_alignTop="@+id/textView3"
+                        android:layout_toEndOf="@+id/textView3"
+                        />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:layout_marginRight="4dip"
+                        android:text="Direccion :"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/background_dark"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/direccionM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:padding="4dp"
+                        android:textColor="@android:color/background_dark"
+                        android:layout_alignTop="@+id/textView4"
+                        android:layout_toEndOf="@+id/textView4"
+                        />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/coment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentStart="true"
+                            android:padding="4dp"
+                            android:text="Comentario :"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/comentarioM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:padding="4dp"
+                        android:textColor="@android:color/background_dark"
+                        android:layout_alignTop="@+id/coment"
+                        android:layout_toEndOf="@+id/coment"
+
+                        />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="4dip"
+                            android:padding="4dp"
+                            android:text="Fono :"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+
+                            android:textStyle="bold"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:id="@+id/telefonoM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/textView6"
+                            android:layout_toEndOf="@+id/textView6"
+                            android:padding="4dp"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/llamarContacto"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:text="Llamar contacto"
+                            android:textColor="@android:color/background_light"
+                            android:layout_marginTop="10dp"/>
+
+
+                    </RelativeLayout>
+
+                    <Spinner
+                        android:id="@+id/comboRamo"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+
+                        android:spinnerMode="dialog"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        />
+
+
+                    <Button
+                        android:id="@+id/ramo"
+                        android:layout_width="160dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/boton_redondo"
+                        android:text="Modificar Ramo"
+                        android:textColor="@android:color/background_light" />
+
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

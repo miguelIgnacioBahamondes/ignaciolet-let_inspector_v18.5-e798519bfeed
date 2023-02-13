@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehLiviano.Fotos.llantasneumaticos">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="Llantas y Neumáticos"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text=""
+            android:textSize="24sp"/>
+
+        <Button
+            android:id="@+id/btnLlantasVolverE"
+            style="@android:style/Widget.Button"
+            android:layout_width="136dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/btnVolverSecLlaE"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnVolverSecLlaE"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/btnLlantasVolverE"
+            android:text="Volver a Secciones"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSiguienteLlantaE"
+            style="@android:style/Widget.Button"
+            android:layout_width="1200dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnVolverSecLlaE"
+            android:layout_toEndOf="@+id/btnVolverSecLlaE"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textSize="18sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textView11"
+            android:layout_below="@+id/textView10">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/btnSeccionUnoLlantasE"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 1: Toma de Fotos Obligatorias"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnLlantasNE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:textColor="@android:color/background_light"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="Foto Llantas y Neumát."
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCant28"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnLlantasNE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPost28"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant28"
+                            android:layout_toEndOf="@+id/textCant28"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+                    </LinearLayout>
+
+
+
+                    <ImageView
+                        android:id="@+id/imageLlantasNE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnRuedaRespuestoLlantasE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:textColor="@android:color/background_light"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="Foto Rueda de Repuesto"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCant29"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnRuedaRespuestoLlantasE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPost29"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant29"
+                            android:layout_toEndOf="@+id/textCant29"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageRuedaRespuestoLlantasE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+
+                    <CheckBox
+                        android:id="@+id/checkFaltante"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Faltante"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"/>
+
+                    <Spinner
+                        android:id="@+id/tipoRueda"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"/>
+
+                    <Spinner
+                        android:id="@+id/ubiRueda"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnAdicionalLlantasE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:textColor="@android:color/background_light"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="Foto Adicional"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCant30"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnAdicionalLlantasE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/contPost30"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant30"
+                            android:layout_toEndOf="@+id/textCant30"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            />
+                    </LinearLayout>
+
+
+
+                    <ImageView
+                        android:id="@+id/imageAdicionalLlantasE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/seccionPos2E"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 2: Datos"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:text="Neumáticos"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/textView40"
+                            android:layout_width="match_parent"
+                            android:text="Estado de neumáticos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"
+                            />
+
+                        <Spinner
+                            android:id="@+id/spinNeu"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:spinnerMode="dialog"
+                            style="@android:style/Widget.Spinner.DropDown"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView41"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:text="Cantidad:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:visibility="gone"
+                            />
+
+                        <EditText
+                            android:id="@+id/cantNeu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView83"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Marca:"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <EditText
+                            android:id="@+id/maNeu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textCapCharacters"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView84"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Modelo:"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <EditText
+                            android:id="@+id/moNeu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textCapCharacters"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView85"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Medida:"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <EditText
+                            android:id="@+id/meNeu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textCapCharacters"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+                        <View
+                            android:id="@+id/linea"
+                            android:layout_width="fill_parent"
+                            android:layout_height="3dp"
+                            android:background="@android:color/holo_orange_dark"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView86"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Cantidad:"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <EditText
+                            android:id="@+id/cantNeu2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+
+
+
+                        <TextView
+                            android:id="@+id/textMarca"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Marca:"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <EditText
+                            android:id="@+id/maNeu2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textCapCharacters"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/TextModelo"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Modelo:"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <EditText
+                            android:id="@+id/moNeu2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textCapCharacters"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/Textmedida"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Medida:"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <EditText
+                            android:id="@+id/meNeu2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textCapCharacters"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView90"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@android:color/holo_orange_dark"
+                            android:text="Llantas:"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView91"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Estado de Llantas:"
+                            android:visibility="gone"
+                            />
+
+                        <Spinner
+                            android:id="@+id/spinLlanta"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:spinnerMode="dialog"
+                            style="@android:style/Widget.Spinner.DropDown"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView92"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Cantidad"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView93"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Fierro:"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <EditText
+                            android:id="@+id/cantFierro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView95"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Cromadas:"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <EditText
+                            android:id="@+id/cantCromadas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView94"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Aleación:"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <EditText
+                            android:id="@+id/cantAlea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/textView96"
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_height="36dp"
+                            android:text="Marca:"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"/>
+
+                        <EditText
+                            android:id="@+id/maLLanta"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textCapCharacters"
+                            android:layout_marginTop="10dp"
+                            android:imeOptions="actionDone"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

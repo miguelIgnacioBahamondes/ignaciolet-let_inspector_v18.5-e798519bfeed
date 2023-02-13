@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.Fallida.Fallida">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textOb"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="OI Fallida"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textObs1"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text=""
+            android:background="@android:color/holo_orange_dark"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnVolverFaJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="115dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/btnPenObsJg"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textSize="12sp" />
+
+
+        <Button
+            android:id="@+id/btnPenObsJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_toEndOf="@+id/btnVolverFaJg"
+            android:text="Pendientes"
+            android:textSize="12sp"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/btnSigObsJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="1100dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnPenObsJg"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/btnPenObsJg"
+            android:background="@drawable/boto_redondoselect"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Transmitir inspección fallida"
+            android:textColor="@android:color/background_light"
+            android:textSize="12sp" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textObs1"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textOb"
+            android:id="@+id/relativeLayout2">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="36dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView115"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="INSTRUCCIONES"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="10dp" />
+
+                    <View
+                        android:id="@+id/linea2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/holo_orange_dark"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tomar tantas fotografías como sea necesario para:"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textView29"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1) Mostrar claramente el lugar de la inspección (se recomiendan  2 fotografías)."
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textView87"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*Recuerda que solo se mostrará la última foto tomada en la pantalla, pero al transmitir se enviarán todas las fotos tomadas."
+                        android:textColor="#000000"/>
+
+                    <TextView
+                        android:id="@+id/textView31"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2) Registrar motivo de fallida cuando se trata de:"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textView33"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="a) vehículo desarmado, con partes o piezas fuera de su lugar, o en un taller mecánico."
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textView34"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="b) vehículo sucio."
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textView35"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text='c) vehículo ubicado en un lugar con mala iluminación o con espacio insuficiente para la toma de fotografías".'
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textView88"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*En caso de ser inspector de región, escriba primero el comentario de la fotografía ya que al tomarla, se enviará y se borrará el comentario actual, para poder tomar una nueva fotografía."
+                        android:textColor="#000000"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/textViewdc"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text=""
+                        android:visibility="gone"
+                        android:textColor="#000000"
+                       />
+
+                    <View
+                        android:id="@+id/linea"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:layout_marginTop="20dp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/textMotivo"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:text="Motivo"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:visibility="gone"/>
+
+
+                    <Spinner
+                        android:id="@+id/spinner_motivo"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:spinnerMode="dialog"
+                        android:visibility="gone"
+                        />
+
+
+                    <EditText
+                        android:id="@+id/edtComentarioFallida"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Comentario..."
+                        android:inputType="textPersonName"
+                        android:visibility="gone"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnFotoFallida"
+                            android:layout_width="160dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/boton_redondo"
+                            android:text="FOTO FALLIDA"
+                            android:textColor="@android:color/background_light" />
+
+
+                        <TextView
+                            android:id="@+id/textCantF"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnFotoAdiocionalE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/contPostF"
+                            android:text=""
+                            style="@android:style/Widget.Button"
+                            android:background="@drawable/boton_redondo"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCantF"
+                            android:layout_toEndOf="@+id/textCantF"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+
+                            />
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/imagenFallida"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

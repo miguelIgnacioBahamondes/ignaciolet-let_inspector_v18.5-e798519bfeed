@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehLiviano.AccActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/textAcc"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_orange_dark"
+            android:textColor="@android:color/background_dark"
+            android:gravity="center"
+            android:text="Accesorios"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:id="@+id/textAcc1"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text=""
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnVolverAccJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="133dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/btnPenAccJg"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnPenAccJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/btnVolverAccJg"
+            android:background="@drawable/boto_redondoselect"
+            android:text="Pendientes"
+            android:textColor="@android:color/background_light"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSigAccJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="1100dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnPenAccJg"
+            android:layout_toEndOf="@+id/btnPenAccJg"
+            android:background="@drawable/boto_redondoselect"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textAcc1"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textAcc">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:text="Interior"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        />
+
+                    <!--<TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Kilometraje"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/Ekilometraje"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"/>-->
+
+                    <!-- <CheckBox
+                         android:id="@+id/checkCruc"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Control Crucero" />
+
+                     <CheckBox
+                         android:id="@+id/checkGps"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:checked="false"
+                         android:phoneNumber="false"
+                         android:tag="25"
+                         android:text="GPS" />-->
+
+                     <CheckBox
+                         android:id="@+id/checkAc"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="A/C"
+                         android:layout_marginTop="10dp"/>
+
+                     <CheckBox
+                         android:id="@+id/checkClim"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Climatizador"
+                         android:layout_marginTop="10dp"/>
+
+                    <!--<CheckBox
+                        android:id="@+id/checkBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bluetooth" />-->
+
+                    <CheckBox
+                        android:id="@+id/checkAlr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alarma"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView26"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Marca Alarma"
+                        android:layout_marginTop="10dp"
+                       />
+
+
+                    <EditText
+                        android:id="@+id/EAlarma"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"/>
+
+                    <CheckBox
+                         android:id="@+id/checkCierreC"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Cierre Centralizado"
+                        android:layout_marginTop="10dp"/>
+
+                      <CheckBox
+                         android:id="@+id/checkCint"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Cinturones de Seguridad Retráctiles"
+                          android:layout_marginTop="10dp"
+                         />
+
+                    <!-- <CheckBox
+                         android:id="@+id/checkCorta"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Corta Corriente" />-->
+
+                     <CheckBox
+                         android:id="@+id/checkFreno"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Frenos ABS"
+                         android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkAirg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Airbags"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Cantidad Airbags"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/cantAirb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        />
+
+                    <!--<CheckBox
+                        android:id="@+id/checkSun"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sunroof" />
+
+                    <CheckBox
+                        android:id="@+id/checkSEl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Eléctrico" />
+
+                    <CheckBox
+                        android:id="@+id/checkSV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Vidriado" />
+
+                    <CheckBox
+                        android:id="@+id/checkRelc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Retrovisores Eléctricos" />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alzavidrios"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/checkAdlt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Delantero" />
+
+                    <CheckBox
+                        android:id="@+id/checkAtra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Trasero" /> -->
+
+                    <!--<CheckBox
+                        android:id="@+id/checkCapota"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Capota Eléctrica"
+                        android:layout_marginTop="10dp"/>-->
+
+                    <!--<CheckBox
+                        android:id="@+id/checkActivado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Activado" />
+
+                    <CheckBox
+                        android:id="@+id/checkLC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Luz check engine" />
+
+                    <CheckBox
+                        android:id="@+id/checkLT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Luz testigo airbags" />
+
+                    <CheckBox
+                        android:id="@+id/checkPirot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pirotécnico no funciona" />
+
+                    <CheckBox
+                        android:id="@+id/checkMotor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Motor no enciende" />-->
+
+
+                    <!--<TextView
+                        android:id="@+id/textView29"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Butacas" />
+
+                    <CheckBox
+                        android:id="@+id/checkBel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Eléctricas" />-->
+
+                    <!--<CheckBox
+                        android:id="@+id/checkBtapiz"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tapiz de cuero" />-->
+
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:textColor="@android:color/background_dark"
+                        android:text="Posterior"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        />
+
+                    <!-- <CheckBox
+                         android:id="@+id/checkSen"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Sensores retroceso" />-->
+
+                     <CheckBox
+                         android:id="@+id/checkSpo"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Spoiler"
+                         android:layout_marginTop="10dp"/>
+
+
+                    <!-- <CheckBox
+                         android:id="@+id/checkCam"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Cámara retroceso" />-->
+
+                     <CheckBox
+                         android:id="@+id/checkAleron"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Alerón"
+                         android:layout_marginTop="10dp"/>
+
+                     <CheckBox
+                         android:id="@+id/checkLimLu"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Limpia luneta"
+                         android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkCubre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cubremaleta"
+                        android:layout_marginTop="10dp"/>
+
+                    <!--<CheckBox
+                        android:id="@+id/checkCpick"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cubre pick up" />-->
+
+                    <CheckBox
+                        android:id="@+id/checkLogo1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Logo"
+                        android:layout_marginTop="10dp"/>
+
+                   <!-- <CheckBox
+                        android:id="@+id/checkRuresp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rueda repuesto"
+                        android:layout_marginTop="10dp"/>
+<CheckBox
+                        android:id="@+id/checkFaltante"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Faltante"
+                        android:layout_marginTop="10dp"/>
+                    -->
+
+
+                    <!--<Spinner
+                        android:id="@+id/tipoRueda"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_marginTop="10dp"/>
+
+                    <Spinner
+                        android:id="@+id/ubiRueda"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:layout_marginTop="10dp"/>-->
+
+                    <CheckBox
+                        android:id="@+id/checkSHerr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Set de herramientas"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkLRueda"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Llave rueda"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkGata"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gata"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkExt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Extintor"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Barra de antivuelco"
+                        android:layout_marginTop="10dp"/>
+
+                    <Spinner
+                        android:id="@+id/ubicAnti"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBAnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Barra Antivuelco"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkPert"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pértiga"
+                        android:layout_marginTop="10dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBaliza"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Baliza"
+                        android:layout_marginTop="10dp"/>
+
+                    <!--<CheckBox
+                        android:id="@+id/checkCarrast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Coco arrastre" />
+
+                    <CheckBox
+                        android:id="@+id/checkMuela"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Muela enganche" />
+
+                    <CheckBox
+                        android:id="@+id/checkEremol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enchufe remolque" />
+
+                    <CheckBox
+                        android:id="@+id/checkEquip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Equipo de frío" />
+
+                    <CheckBox
+                        android:id="@+id/checkCrefrig"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cámara refrigerada" />-->
+
+                    <CheckBox
+                        android:id="@+id/checkCupula"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cúpula"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView32"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Marca Cúpula"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/mCupula"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"/>
+
+                    <!--<CheckBox
+                        android:id="@+id/checkTrig"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tapa rígida pick up" />
+
+                    <CheckBox
+                        android:id="@+id/checkLcubre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lona cubre pick up" />-->
+
+                    <CheckBox
+                        android:id="@+id/checkCajaH"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Caja de herramientas "
+                        android:layout_marginTop="10dp"/>
+
+                    <!--<TextView
+                        android:id="@+id/textView33"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Varios" />-->
+
+                    <CheckBox
+                        android:id="@+id/checkMoldu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Moldura paso rueda"
+                        android:layout_marginTop="10dp"/>
+
+                    <!--<CheckBox
+                        android:id="@+id/checkPis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pisadera" />-->
+
+                    <!--<CheckBox
+                        android:id="@+id/checkFal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Faldones"
+                        android:layout_marginTop="10dp"/>-->
+
+                    <!--<CheckBox
+                        android:id="@+id/checkGpa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Grabado patente" />
+
+                    <CheckBox
+                        android:id="@+id/checkPol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Polarizado" />
+
+                    <CheckBox
+                        android:id="@+id/checkLseg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lámina de seguridad" />
+
+                    <TextView
+                        android:id="@+id/textView34"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/holo_orange_dark"
+                        android:text="Frontal"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/checkStur"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sistema Turbo" />
+
+                    <CheckBox
+                        android:id="@+id/checkHui"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Huinche" />
+
+                    <CheckBox
+                        android:id="@+id/checkSenP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sensores de proximidad" />
+
+                    <CheckBox
+                        android:id="@+id/checkLogo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Logo" />
+
+                    <CheckBox
+                        android:id="@+id/checkNebl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Neblineros" />-->
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

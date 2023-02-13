@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmailActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textOb"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="Lugar de Inspección"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textObs1"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text=""
+            android:background="@android:color/holo_orange_dark"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnVolverJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="115dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/btnPenObsJg"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textSize="18sp" />
+
+
+        <Button
+            android:id="@+id/btnPenObsJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_toEndOf="@+id/btnVolverJg"
+            android:text="Pendientes"
+            android:textSize="12sp"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/btnSigE"
+            style="@android:style/Widget.Button"
+            android:layout_width="1100dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnPenObsJg"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/btnPenObsJg"
+            android:background="@drawable/boto_redondoselect"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Finalizar"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textObs1"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textOb"
+            android:id="@+id/relativeLayout2">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="36dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView115"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Envío de comprobante"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:textSize="27sp"
+                        android:lineSpacingExtra="30dp" />
+                    <View
+                        android:id="@+id/linea"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/holo_orange_dark"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Favor verificar email para envío de comprobante o ingresar email válido."
+                        android:textSize="22sp"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:layout_marginTop="40dp"
+                      />
+
+                    <EditText
+                        android:id="@+id/emailC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:singleLine="true"
+                        android:layout_marginTop="20dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:textStyle="bold"
+                        android:textSize="32sp"
+                        android:lineSpacingExtra="50dp" />
+
+
+                    <View
+                        android:id="@+id/linea2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/holo_orange_dark"
+
+                        />
+
+
+
+                </LinearLayout>
+
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

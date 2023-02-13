@@ -1,0 +1,45 @@
+tipo panel radio 		211 				Listo
+	marca 				213			Listo	
+	modelo 				214			Listo
+	tipo radio entrada 		212			Listo
+cantidad parlante 		216				Listo
+	marca parlante 			217			Listo
+	modelo parlante 		323			Listo
+antena Ok 			218
+	Electrica Ok 			219			Listo	
+	Radiotransmisor Ok		797			Listo
+Tweeter Ok 			239				Listo
+	cantidad 			240			Listo		
+	marca				241			Listo
+	modelo 				242			Listo
+	ubicacion 			243			Listo
+woofer Ok 			245				Listo
+	cantidad			246			Listo
+	marca				247			Listo
+	modelo				248			Listo
+	ubicacion 			249			Listo
+amplificador1 Ok		221				Listo
+	cantidad			222			Listo		
+	marca				223			Listo		
+	modelo				224			Listo
+	ubicacion			225			Listo
+amplificador2 Ok 	227					Listo
+	cantidad			228			Listo
+	marca				229			Listo
+	modelo				230			Listo
+	ubicacion			231			Listo
+dvd Ok				233				Listo
+	cantidad			237			Listo
+	marca				234			Listo
+	modelo				235			Listo
+	ubicacion 			236			Listo
+pantalla Ok			251				Listo
+	cantidad			255			Listo
+	marca				252			Listo
+	modelo				253			Listo
+	ubicacion			254			Listo
+dvd modular Ok 		757
+	cantidad			758
+	marca				759
+	modelo				760
+	ubicacion			761

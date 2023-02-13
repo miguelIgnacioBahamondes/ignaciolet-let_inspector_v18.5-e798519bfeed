@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="insp">
+        <item>Seleccione...</item>
+        <item>Nueva</item>
+        <item>Reinspección</item>
+        <item>Accesorios</item>
+    </string-array>
+
+
+    <string-array name="tipo_veh">
+    <item>Seleccione...</item>
+    <item>Moto</item>
+    <item>Sedán</item>
+    <item>Hatchback</item>
+    <item>Coupé</item>
+    <item>Station Wagon</item>
+    <item>Camioneta</item>
+    <item>Jeep</item>
+    <item>Van/Furgón</item>
+    <item>Convertible</item>
+    <item>Discapacitado</item>
+    <item>Convertible</item>
+    <item>Discapacitado</item>
+    <item>Ambulancia</item>
+    <item>Minibus</item>
+</string-array>
+
+    <string-array name="uso_veh">
+        <item>Seleccione...</item>
+        <item>Particular</item>
+        <item>Comercial</item>
+        <item>Deportivo</item>
+    </string-array>
+
+    <string-array name="trans">
+    <item>Seleccione...</item>
+    <item>Manual</item>
+    <item>Automático</item>
+    </string-array>
+
+
+    <string-array name="panel_radio">
+        <item>Seleccione...</item>
+        <item>Desmontable</item>
+        <item>Fijo</item>
+    </string-array>
+
+    <string-array name="tipo_radio">
+        <item>Seleccione...</item>
+        <item>CD</item>
+        <item>Casette</item>
+        <item>Standar</item>
+    </string-array>
+
+    <string-array name="tweeter">
+        <item>Seleccione...</item>
+        <item>Panel</item>
+        <item>Puerta</item>
+        <item>Pilares</item>
+    </string-array>
+
+    <string-array name="woofer">
+        <item>Seleccione...</item>
+        <item>Maleta</item>
+    </string-array>
+
+    <string-array name="amplif1">
+        <item>Seleccione...</item>
+        <item>Maleta</item>
+        <item>Asiento</item>
+        <item>Panel</item>
+        <item>Techo</item>
+    </string-array>
+
+    <string-array name="amplif2">
+        <item>Seleccione...</item>
+        <item>Maleta</item>
+        <item>Asiento</item>
+        <item>Panel</item>
+        <item>Techo</item>
+    </string-array>
+
+    <string-array name="lector">
+        <item>Seleccione...</item>
+        <item>Maleta</item>
+        <item>Asiento</item>
+        <item>Panel</item>
+        <item>Techo</item>
+    </string-array>
+
+    <string-array name="pantalla">
+        <item>Seleccione...</item>
+        <item>Asiento</item>
+        <item>Panel</item>
+        <item>Techo</item>
+    </string-array>
+
+    <string-array name="dvd">
+        <item>Seleccione...</item>
+        <item>Asiento</item>
+        <item>Panel</item>
+        <item>Techo</item>
+    </string-array>
+
+    <string-array name="tipo_rueda">
+        <item>Seleccione tipo rueda repuesto...</item>
+        <item>Normal</item>
+        <item>Emergencia</item>
+    </string-array>
+
+    <string-array name="ubicacion_rueda">
+        <item>Seleccione ubicación rueda repuesto...</item>
+        <item>Interna</item>
+        <item>Externa</item>
+        <item>Int/Ext</item>
+    </string-array>
+
+    <string-array name="ubic_anti">
+        <item>Seleccione ubicación barra antivuelco...</item>
+        <item>Interna</item>
+        <item>Externa</item>
+        <item>Int/Ext</item>
+    </string-array>
+
+    <string-array name="estado_llanta">
+        <item>Seleccione...</item>
+        <item>Bueno</item>
+        <item>Regular</item>
+        <item>Malo</item>
+    </string-array>
+
+    <string-array name="estado_neumatico">
+        <item>Seleccione...</item>
+        <item>Bueno</item>
+        <item>Regular</item>
+        <item>Malo</item>
+    </string-array>
+
+
+    <string-array name="tipo_ramo">
+        <item>Seleccione Ramo...</item>
+        <item>Vehículo liviano</item>
+        <item>Vehículo pesado</item>
+    </string-array>
+
+    <string-array name="veh_pesado">
+        <item>Seleccione tipo de Vehículo...</item>
+        <item>Camiones</item>
+        <item>Tracto Camiones</item>
+        <item>Buses</item>
+        <item>Semiremolque</item>
+    </string-array>
+
+    <string-array name="combo_motivo">
+        <item>Seleccione...</item>
+        <item>Falta llave y/o documento</item>
+        <item>Contacto no se presenta</item>
+        <item>Vehículo sin batería/ batería defectuosa</item>
+        <item>Vehículo en taller/desarmado</item>
+        <item>Sin espacio y/o luz suficiente para inspeccionar</item>
+        <item>Vehículo sucio</item>
+        <item>Otros</item>
+    </string-array>
+
+    <string-array name="combo_tipo_veh">
+        <item>Seleccione...</item>
+        <item>Transporte de pasajeros</item>
+        <item>Vehículo de arriendo</item>
+        <item>Ambulancia</item>
+        <item>Otros vehículos de emergencia</item>
+        <item>Vehículo escuela de conductores</item>
+        <item>Furgón escolar</item>
+        <item>Ninguna de la anteriores</item>
+    </string-array>
+
+    <string-array name="combo_pat_esp">
+        <item>Seleccione...</item>
+        <item>Sin placas patente</item>
+        <item>Patente colores especiales (no blanca)</item>
+        <item>Patente extranjera</item>
+        <item>Ninguna de la anteriores</item>
+    </string-array>
+    <string-array name="combo_placaAdul">
+        <item>Seleccione...</item>
+        <item>Placa chasis adulterada</item>
+        <item>Placa chasis no se encuentra</item>
+    </string-array>
+    <string-array name="tipo_sunroof">
+        <item>Seleccione...</item>
+        <item>Manual</item>
+        <item>Eléctrico</item>
+    </string-array>
+
+    <string-array name="Tpasajero">
+        <item>Seleccione...</item>
+        <item>si</item>
+        <item>no</item>
+        <item>no sabe/no responde</item>
+    </string-array>
+
+    <string-array name="Ptotal">
+        <item>Seleccione...</item>
+        <item>si</item>
+        <item>no</item>
+        <item>no sabe/no responde</item>
+    </string-array>
+
+
+
+</resources>

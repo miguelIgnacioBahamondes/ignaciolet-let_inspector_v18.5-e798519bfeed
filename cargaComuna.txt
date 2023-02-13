@@ -1,0 +1,64 @@
+try {
+
+                URL url = new URL("https://www.autoagenda.cl/movil/cargamovil/cargaComuna"); // here is your URL path
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(15000 /* milliseconds */);
+                conn.setConnectTimeout(15000 /* milliseconds */);
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+
+                OutputStream os = conn.getOutputStream();
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+                //writer.write(getPostDataString(""));
+
+                writer.flush();
+                writer.close();
+                os.close();
+
+                int responseCode = conn.getResponseCode();
+
+                if (responseCode == HttpsURLConnection.HTTP_OK) {
+
+                    BufferedReader in = new BufferedReader(new
+                            InputStreamReader(
+                            conn.getInputStream()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line = "";
+
+                    while ((line = in.readLine()) != null) {
+
+                        sb.append(line);
+                        break;
+                    }
+
+                    in.close();
+
+
+                    String json = sb.toString();
+                    try {
+
+                        JSONArray jsonjoha = new JSONArray(json);
+                        if(!jsonjoha.isNull(0))
+                        {
+                            String result="";
+                            for(int i=0;i<jsonjoha.length();i++){
+
+                                JSONObject jsonnn = new JSONObject(jsonjoha.getString(i));
+                                result = db.insertarComuna(jsonnn.getInt("id_region"),jsonnn.getString("region"),jsonnn.getString("comuna"));
+                            }
+                        }
+                        return sb.toString();
+                    }catch (Exception e)
+                    {
+                        return e.getMessage();
+                    }
+
+                } else {
+                    return new String("false : " + responseCode);
+                }
+            } catch (Exception e) {
+                return new String("Exception: " + e.getMessage());
+            }

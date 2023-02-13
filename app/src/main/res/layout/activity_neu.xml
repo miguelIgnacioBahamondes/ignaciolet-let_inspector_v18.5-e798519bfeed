@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehLiviano.NeuActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textNeu"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:background="@android:color/holo_orange_dark"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Neumáticos"
+            android:textColor="@android:color/background_dark"/>
+
+        <TextView
+            android:id="@+id/textNeu1"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text=""
+            android:background="@android:color/holo_orange_dark"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnVolverNeuJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="133dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/btnPenNeuJg"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textSize="18sp"
+            />
+
+        <Button
+            android:id="@+id/btnPenNeuJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_toEndOf="@+id/btnVolverNeuJg"
+            android:text="Pendientes"
+            android:visibility="invisible" />/>
+
+        <Button
+            android:id="@+id/btnSigNeuJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="1100dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnPenNeuJg"
+            android:layout_toEndOf="@+id/btnPenNeuJg"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textSize="18sp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textNeu1"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textNeu">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView40"
+                        android:layout_width="match_parent"
+
+                        android:text="Estado de neumáticos:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        />
+
+                    <Spinner
+                        android:id="@+id/spinNeu"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView41"
+                        android:layout_width="match_parent"
+
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        />
+
+                    <EditText
+                        android:id="@+id/cantNeu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+
+                    <TextView
+                        android:id="@+id/textView83"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Marca"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/maNeu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView84"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Modelo"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/moNeu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView85"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Medida"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/meNeu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView86"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Cantidad"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/cantNeu2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textMarca"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Marca"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/maNeu2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text" android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/TextModelo"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Modelo"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/moNeu2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/Textmedida"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Medida"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/meNeu2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView90"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:text="Llantas"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView91"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Estado de Llantas:"
+                        />
+
+                    <Spinner
+                        android:id="@+id/spinLlanta"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        style="@android:style/Widget.Spinner.DropDown"
+
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView92"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Cantidad"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView93"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Fierro:"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/cantFierro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView95"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Cromadas:"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/cantCromadas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView94"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Aleación:"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/cantAlea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView96"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Marca:"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/maLLanta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

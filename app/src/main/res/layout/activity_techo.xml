@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehLiviano.TechoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textTec"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:background="@android:color/holo_orange_dark"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Techo"
+            android:textColor="@android:color/background_dark"/>
+
+        <TextView
+            android:id="@+id/textTec1"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text=""
+            android:background="@android:color/holo_orange_dark"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnVolverTecJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="133dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/btnPenTecJg"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnPenTecJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/btnVolverTecJg"
+            android:background="@drawable/boto_redondoselect"
+            android:text="Pendientes"
+            android:textColor="@android:color/background_light"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSigTecJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="1100dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnPenTecJg"
+            android:layout_toEndOf="@+id/btnPenTecJg"
+            android:background="@drawable/boto_redondoselect"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textTec1"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textTec">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cParrilla"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:text="Parrilla"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView99"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Marca:"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/maParrilla"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <CheckBox
+                        android:id="@+id/cBarras"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Barras porta equipaje:"
+                        android:textSize="18sp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView102"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Marca:"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/maBarras"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <CheckBox
+                        android:id="@+id/cportaE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Porta equipaje:"
+                        android:textSize="18sp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView103"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Marca:"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/maPorta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <CheckBox
+                        android:id="@+id/cPortaSk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Porta Ski"
+                        android:textSize="18sp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView104"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="Marca:"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"/>
+
+                    <EditText
+                        android:id="@+id/maPortaSki"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.InsPendientesActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="Inspecciones Pendientes"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/versionApp"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:text=""/>
+
+        <Button
+            android:id="@+id/btnPenObsJg1"
+            style="@android:style/Widget.Button"
+            android:layout_width="115dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/btnPenObsJg"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+
+        <Button
+            android:id="@+id/btnPenObsJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="180dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_toEndOf="@+id/btnPenObsJg1"
+            android:text="Pendientes"
+            android:textSize="12sp"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/btnBorrarBD"
+            style="@android:style/Widget.Button"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnPenObsJg"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/btnPenObsJg"
+            android:background="@drawable/boto_redondoselect"
+            android:text="Borrar BD"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textView2"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView">
+
+
+                <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/swipeM"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <de.codecrafters.tableview.TableView
+                        xmlns:table="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/tableView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        table:tableView_columnCount="4"
+                        />
+
+
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+    <!--LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="36dp">
+
+
+
+        </ScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout-->
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehPesado.DatosInspVpActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textInsp2"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:background="@android:color/holo_orange_dark"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Datos de Inspección" />
+
+        <TextView
+            android:id="@+id/textInsp3"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text=""
+            android:background="@android:color/holo_orange_dark"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnVolverInspVpJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="115dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"/>
+
+
+        <Button
+            android:id="@+id/btnPenInspVpJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_toEndOf="@+id/btnVolverInspVpJg"
+            android:text="Pendientes"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+
+        <Button
+            android:id="@+id/btnSigInspJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="1100dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnPenInspVpJg"
+            android:layout_toEndOf="@+id/btnPenInspVpJg"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textSize="18sp"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textInsp3"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textInsp2">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="36dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView113"
+                        android:layout_width="match_parent"
+                        android:text="Inspección por:"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <!--<TextView
+                        android:id="@+id/textView108"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Comunas" />-->
+
+                    <Spinner
+                        android:id="@+id/tipo_veh_vp"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/textView107"
+                        android:layout_width="match_parent"
+                        android:text="Dirección"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/dirIns"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView109"
+                        android:layout_width="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Región" />
+
+                    <!--<Spinner
+                        android:id="@+id/comboRegVep"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />-->
+
+                    <AutoCompleteTextView
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/comboRegVe"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/textView108"
+                        android:layout_width="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Comunas" />
+
+                    <!--<Spinner
+                        android:id="@+id/comboComVpJg"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />-->
+
+                    <AutoCompleteTextView
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/comboComVp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/textView110"
+                        android:layout_width="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Fecha" />
+
+                    <EditText
+                        android:id="@+id/fechaInsp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView111"
+                        android:layout_width="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Hora" />
+
+                    <EditText
+                        android:id="@+id/horaInsp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView112"
+                        android:layout_width="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Entrevistado" />
+
+                    <EditText
+                        android:id="@+id/entrevistado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:imeOptions="actionDone"/>
+
+                   <!-- <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:layout_height="36dp"
+                        android:text="Ingrese email para envío de comprobante"
+                        android:layout_marginTop="10dp"/>
+
+
+
+                    <EditText
+                        android:id="@+id/mailJg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>-->
+
+                    <!--<Button
+                        android:id="@+id/fotoComprobanteV"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="230dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/boton_redondo"
+                        android:drawableLeft="@android:drawable/ic_menu_camera"
+                        android:drawablePadding="9dp"
+                        android:text="Foto Comprobante"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="18sp" />-->
+
+
+                    <!--<ImageView
+                        android:id="@+id/imagenComproV"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"/>-->
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

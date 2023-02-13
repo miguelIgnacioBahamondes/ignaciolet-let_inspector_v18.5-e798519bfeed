@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.letchile.let.VehLiviano.DatosAsegActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="500dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="Datos del Asegurado"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp"/>
+
+
+        <TextView
+            android:id="@+id/textD2"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text=""
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"/>
+
+
+        <Button
+            android:id="@+id/btnVolverAsegJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="133dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/btnPenAsegJg"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Volver"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnPenAsegJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:layout_toEndOf="@+id/btnVolverAsegJg"
+            android:text="Pendientes"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSigAsegJg"
+            style="@android:style/Widget.Button"
+            android:layout_width="1100dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/btnPenAsegJg"
+            android:layout_toEndOf="@+id/btnPenAsegJg"
+            android:background="@drawable/boto_redondoselect"
+            android:textColor="@android:color/background_light"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:text="Siguiente"
+            android:textSize="18sp"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textD2"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView3">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textNomJg"
+                        android:layout_width="match_parent"
+                        android:text="Nombre"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/nomJg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:nextFocusDown="@+id/apellidoPaternoM"
+                        android:singleLine="true"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"/>
+
+                    <TextView
+                        android:id="@+id/aPaterJg"
+                        android:layout_width="match_parent"
+
+                        android:text="Apellido Paterno"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/apellidoPaternoM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:nextFocusDown="@+id/maternoAseguradoM"
+                        android:singleLine="true"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Apellido Materno"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/maternoAseguradoM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:nextFocusDown="@+id/rutJg"
+                        android:singleLine="true"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Rut"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/rutJg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:nextFocusDown="@+id/comboRegJg"
+                        android:singleLine="true"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Región"
+                        android:layout_marginTop="10dp"/>
+
+                    <!--<Spinner
+                        android:id="@+id/comboRegJg"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_marginTop="10dp"/>-->
+
+                    <AutoCompleteTextView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/comboRegJg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Comunas"
+                        android:layout_marginTop="10dp"/>
+
+                    <!--<Spinner
+                        android:id="@+id/comboComJr"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:spinnerMode="dialog"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_marginTop="10dp"/>-->
+
+                    <AutoCompleteTextView
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/comboComJr"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Dirección "
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/direccionM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:singleLine="true"
+                        android:nextFocusDown="@+id/fonoJg"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"/>
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Fono"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/fonoJg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:nextFocusDown="@+id/mailJg"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Celular"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/celuJg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>
+                   <!-- <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="36dp"
+                        android:text="Email" android:layout_marginTop="10dp"/>-->
+
+                    <!--<EditText
+                        android:id="@+id/mailJg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textEmailAddress"
+                        android:layout_marginTop="10dp"
+                        android:imeOptions="actionDone"/>-->
+
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
