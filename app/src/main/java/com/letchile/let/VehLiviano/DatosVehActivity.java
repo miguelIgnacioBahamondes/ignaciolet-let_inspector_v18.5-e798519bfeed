@@ -51,7 +51,7 @@ public class DatosVehActivity extends AppCompatActivity {
     private static String MEDIA_DIRECTORY = APP_DIRECTORY ;
     private final int TAKE_GAS = 200;
     private final int TAKE_ELECTRICO = 300;
-    Spinner tipo_veh,uso_veh,transmision, placaAdult,Tpasajero,Ptotal;
+    Spinner tipo_veh,uso_veh,transmision, placaAdult,Tpasajero,Ptotal,Dmovimiento;
     EditText patente,marca,modelo,subModelo,color,anio,nPuertas,nMotor,nChasis;
     CheckBox bencina,Diesel,gasLicuado,electrico,placaAdulterada,cuatroxcuatro,iimportDirec;
     JSONObject llenado;
@@ -128,6 +128,14 @@ public class DatosVehActivity extends AppCompatActivity {
         spinner_adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Ptotal.setAdapter(spinner_adapter5);
         Ptotal.setSelection(arrayPtotalList.indexOf(db.accesorio(Integer.parseInt(id_inspeccion),967).toString()));
+
+        Dmovimiento = findViewById(R.id.spinner_Dmovimiento);
+        String[] arrayDmovimiento = getResources().getStringArray(R.array.Dmovimiento);
+        final  List<String> arrayDmovimientoList = Arrays.asList(arrayDmovimiento);
+        ArrayAdapter<String> spinner_adapter7 = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrayDmovimientoList);
+        spinner_adapter7.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Dmovimiento.setAdapter(spinner_adapter7);
+        Dmovimiento.setSelection(arrayDmovimientoList.indexOf(db.accesorio(Integer.parseInt(id_inspeccion),969).toString()));
 
        /* placaAdult = findViewById(R.id.spinner_placAdult);
         String[] arrayPlaca = getResources().getStringArray(R.array.combo_placaAdul);
@@ -490,6 +498,11 @@ public class DatosVehActivity extends AppCompatActivity {
                     Toast.makeText(DatosVehActivity.this, "Debe responder pregunta ¿El vehículo tiene pérdida total o ha sido comprado en remate?",
                             Toast.LENGTH_SHORT).show();
                 }
+                else if (Dmovimiento.getSelectedItem().toString().equalsIgnoreCase("Seleccione..."))
+                {
+                    Toast.makeText(DatosVehActivity.this, "Debe responder pregunta ¿Cuenta con algún dispositivo de monitoreo en su vehículo?",
+                            Toast.LENGTH_SHORT).show();
+                }
                 else
                 {
                     guardarDatos();
@@ -714,6 +727,10 @@ public class DatosVehActivity extends AppCompatActivity {
             datosvalor21.put("valor_id",967);
             datosvalor21.put("texto",Ptotal.getSelectedItem().toString());
 
+            JSONObject datosvalor22 = new JSONObject();
+            datosvalor22.put("valor_id",969);
+            datosvalor22.put("texto",Dmovimiento.getSelectedItem().toString());
+
 
             JSONArray datosvalores = new JSONArray();
             datosvalores.put(datosvalor1);
@@ -737,6 +754,7 @@ public class DatosVehActivity extends AppCompatActivity {
             datosvalores.put(datosvalor19);
             datosvalores.put(datosvalor20);
             datosvalores.put(datosvalor21);
+            datosvalores.put(datosvalor22);
 
             if(!datosvalores.isNull(0)){
                 for(int i=0;i<datosvalores.length();i++){

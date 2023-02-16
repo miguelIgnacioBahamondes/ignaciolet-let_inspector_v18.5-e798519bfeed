@@ -40,13 +40,13 @@
             style="@android:style/Widget.Button"
             android:layout_width="136dp"
             android:layout_height="45dp"
-            android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/btnVolverSecInteriorE"
+            android:layout_alignParentStart="true"
             android:background="@drawable/boto_redondoselect"
-            android:textColor="@android:color/background_light"
             android:drawableLeft="@android:drawable/ic_menu_revert"
             android:text="Volver"
-            android:textSize="18sp"/>
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btnVolverSecInteriorE"
@@ -67,10 +67,10 @@
             android:layout_alignTop="@+id/btnVolverSecInteriorE"
             android:layout_toEndOf="@+id/btnVolverSecInteriorE"
             android:background="@drawable/boto_redondoselect"
-            android:textColor="@android:color/background_light"
             android:drawableRight="@android:drawable/ic_media_play"
             android:text="Siguiente"
-            android:textSize="18sp"/>
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -205,6 +205,59 @@
                         android:orientation="horizontal">
 
                         <Button
+                            android:id="@+id/btnLogoParaFrontalE"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boton_redondo"
+                            android:drawableLeft="@android:drawable/ic_menu_camera"
+                            android:drawablePadding="8dp"
+                            android:text="Foto Parabrisas Interior"
+                            android:textColor="@android:color/background_light"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textCant14"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/btnLogoParaFrontalE"
+                            android:text=" Cant. Fotos:"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/contPost14"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_alignTop="@+id/textCant14"
+                            android:layout_toEndOf="@+id/textCant14"
+                            android:background="@drawable/boton_redondo"
+                            android:text=""
+                            android:textColor="@android:color/background_light"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/imageLogoParaE"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
                             android:id="@+id/btnRadioInteriorE"
                             style="@android:style/Widget.Button"
                             android:layout_width="230dp"
@@ -250,6 +303,7 @@
                         android:layout_height="130dp"
                         android:layout_gravity="center"
                         android:visibility="gone" />
+
 
                     <TextView
                         android:id="@+id/textView37"
@@ -1366,7 +1420,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Sección 4: Toma de Fotos OBD "
-                        android:textSize="18sp"
+                        android:textSize="18sp" />
 
 
                     <LinearLayout

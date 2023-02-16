@@ -77,17 +77,18 @@ public class interior extends AppCompatActivity {
     private final int PHOTO_MODULAR = 2500;
     private final int PHOTO_OBD = 2600;
     private final int PHOTO_LLAVES = 2700;
-    private Button btnVolverInteriorE,btnVolverSecInteriorE,btnSiguienteInteriorE,btnPanelFueraInteE,btnPanelDentroInteE,btnRadioInteriorE,btnKilometrajeE,btnAdicionalInteriorE,btnOBDE,btnLLavesE,btnSeccionUnoInterior, btnSeccionTresInterior, btnSeccionTresMQ,btnSeccionOBD;
+    private final int PHOTO_PARABRISAS = 2800;
+    private Button btnVolverInteriorE,btnVolverSecInteriorE,btnSiguienteInteriorE,btnPanelFueraInteE,btnPanelDentroInteE,btnRadioInteriorE,btnKilometrajeE,btnAdicionalInteriorE,btnOBDE,btnLLavesE,btnSeccionUnoInterior, btnSeccionTresInterior, btnSeccionTresMQ,btnSeccionOBD,btnLogoParaFrontalE;
     private ImageView imagePanelFueraInteE,imagePanelDentroInteE,imageRadioInteriorE,imageKilometrajeE,imageAdicionalInteriorE,imageLuzCheckEngineE,imageluzTestigoAirE,
             imageControlCruceE,imageBluetoothE,imageTapizCueroE,imageButacaElectE,imageCortaCorriE,imageAlzavidrioDeE,imageAlzavidrioTrE,imageRetroElectE,imageParlantesE,
-            imageTweeterE,imageAmplifiUnoE,imageAmplifiDosE,imageWooferE,imagePantallaDvdE,imageGpsE,imageLectorDvdE,imageModularDvd,imageOBDE,imageLLavesE;
+            imageTweeterE,imageAmplifiUnoE,imageAmplifiDosE,imageWooferE,imagePantallaDvdE,imageGpsE,imageLectorDvdE,imageModularDvd,imageOBDE,imageLLavesE,imageLogoParaE;
     private CheckBox luzCheckEngineE,luzTestigoAirE,controlCruceE,bluetoothE,tapizCueroE,butacaElectE,cortaCorriE,alzavidrioDeE,alzavidrioTrE,retroElectE,parlantesE,tweeterE,
             amplifiUnoE,amplifiDosE,wooferE,pantallaDvdE,gpsE, eletricro,radiotransmisor,apernadoTeewter,apernadoWoofer,apernadoAmplifi1,apernadoAmplifi2,apernadoDvd,apernadoPantalla,apernadoDvdModular,
             anteElectCheck,radioTransCheck,tweeterApernado, checkWoofe,amplifi1check,amplifi2check,checkWoofer, luzTestigoABS ;
     private TextView txtAlzavidrioE,textCant19,contPost19,textCant20,contPost20,textCant21,contPost21,textCant22,contPost22,textCant23,contPost23,contPost24,textCant24,contPost25,textCant25,
             textView36, textView37,textView38,textView42,textView43,textView44,textView45, textView46,textView47,textView48,textView50,textView51,textView52,textView53,textView49,
             textView54,textView55,textView56,textView57,textView58,textView63,textView64,textView65,textView66,textView59,textView67,textView68,textView69,textView70,textView60,textView71,textView72,
-            textView73,textView74,textView61,textView75,textView76,textView77,textView78,textView62,textView79,textView80,textView81,textView82,textView39,textViewK;
+            textView73,textView74,textView61,textView75,textView76,textView77,textView78,textView62,textView79,textView80,textView81,textView82,textView39,textViewK,textCant14,contPost14;
     private String mPath;
     private File ruta_sd;
     private String ruta = "";
@@ -133,6 +134,8 @@ public class interior extends AppCompatActivity {
         btnLLavesE = findViewById(R.id.btnLLavesE);
         imageLLavesE = findViewById(R.id.imageLLavesE);
         textViewK = findViewById(R.id.textViewK);
+        btnLogoParaFrontalE = findViewById(R.id.btnLogoParaFrontalE);
+        imageLogoParaE = findViewById(R.id.imageLogoParaE);
 
 
         Ekilometraje = findViewById(R.id.Ekilometraje);
@@ -368,6 +371,9 @@ public class interior extends AppCompatActivity {
         contPost25 = findViewById(R.id.contPost25);
         contPost25.setText(String.valueOf(db.cantidadF(Integer.parseInt(id_inspeccion),"Foto llaves")));
 
+        textCant14 = findViewById(R.id.textCant14);
+        contPost14 = findViewById(R.id.contPost14);
+        contPost14.setText(String.valueOf(db.cantidadF(Integer.parseInt(id_inspeccion),"parabrisas interior")));
 
         btnPanelFueraInteE.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -438,6 +444,12 @@ public class interior extends AppCompatActivity {
             @Override
             public void onClick(View v) {DesplegarCamposSeccionOBD(id_inspeccion);  }
 
+        });
+        btnLogoParaFrontalE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                funcionCamara(id_inspeccion,"_Foto_Parabrisas.jpg",PHOTO_PARABRISAS);
+            }
         });
 
 
@@ -1252,6 +1264,7 @@ public class interior extends AppCompatActivity {
                 String imageLLavesE = db.foto(Integer.parseInt(id_inspeccion),"Foto llaves");
                 String marcaRadio = marcaPanel.getText().toString();
                 String kilomet = Ekilometraje.getText().toString();
+                String imageLogoPara = db.foto(Integer.parseInt(id_inspeccion),"Parabrisas Interior");
 
                 if (imagePanelFueraInte.length()<3 && imagePanelDentroInte.length()<3 && imageRadioInterior.length()<3 && imageKilometraje.length()<3 && imageAdicionalInterior.length()<3 && obd == 0 ) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(interior.this);
@@ -1268,13 +1281,28 @@ public class interior extends AppCompatActivity {
                     AlertDialog alert = builder.create();
                     alert.show();
                 }
-                else if (imagePanelFueraInte.length()<3 && imagePanelDentroInte.length()<3 && imageRadioInterior.length()<3 && imageKilometraje.length()<3 && imageAdicionalInterior.length()<3 && imageOBDE.length()<3 && imageLLavesE.length()<3 && obd == 1 ) {
+                else if (imagePanelFueraInte.length()<3 && imagePanelDentroInte.length()<3 && imageRadioInterior.length()<3 && imageKilometraje.length()<3 && imageAdicionalInterior.length()<3 && imageOBDE.length()<3 && imageLLavesE.length()<3  && imageLogoPara.length()<3&& obd == 1 ) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(interior.this);
                     builder.setCancelable(false);
                     builder.setTitle("LET Chile");
                     builder.setMessage(Html.fromHtml("<b>Debe Tomar Fotos Obligatorias</b><p><ul><li>- Foto Panel desde Afuera</li><p><li>- Foto Panel desde Adent.</li></p>" +
                             "<p><li>- Foto Radio</li></p><p><li>- Foto Kilomentraje</li></p><p><li>- Foto panel herramientas</li></p></ul></p> <p><li>- Foto obd</li></p></ul></p>" +
                             "<p><li>- Foto llaves</li></p></ul></p>"));
+                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
+               else  if( imageLogoPara.length()<4 )
+                {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(interior.this);
+                    builder.setCancelable(false);
+                    builder.setTitle("LET Chile");
+                    builder.setMessage(Html.fromHtml("<b>Debe Tomar Fotos Obligatorias</b><p><ul><li>- Foto interior</li><p><li>- Foto Interior Parabrisas</li></p></ul></p>"));
                     builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -1532,6 +1560,39 @@ try {
                 cantFoto20= cantFoto20 +1;
                 db.insertCantidadFoto(Integer.parseInt(id_inspeccion),"Foto Panel desde Dentro Interior",cantFoto20);
                 contPost20.setText(String.valueOf(cantFoto20));
+
+                break;
+            case PHOTO_PARABRISAS:
+                MediaScannerConnection.scanFile(this,
+                        new String[]{mPath}, null,
+                        new MediaScannerConnection.OnScanCompletedListener() {
+                            @Override
+                            public void onScanCompleted(String path, Uri uri) {
+                                Log.i("ExternalStorage", "Scanned " + path + ":");
+                                Log.i("ExternalStorage", "-> Uri = " + uri);
+                            }
+                        });
+
+                Bitmap bitmapParabrisas = BitmapFactory.decodeFile(mPath);
+                bitmapParabrisas = foto.redimensiomarImagen(bitmapParabrisas);
+
+                String imagenParabrisas = foto.convertirImagenDano(bitmapParabrisas);
+                db.insertaFoto(Integer.parseInt(id_inspeccion), db.correlativoFotos(Integer.parseInt(id_inspeccion)), nombreimagen, "Parabrisas Interior", 0, imagenParabrisas, 0);
+                imagenParabrisas = "data:image/jpg;base64,"+imagenParabrisas;
+                String base64Image26 = imagenParabrisas.split(",")[1];
+                byte[] decodedString26 = Base64.decode(base64Image26, Base64.DEFAULT);
+                Bitmap decodedByte26 = BitmapFactory.decodeByteArray(decodedString26, 0, decodedString26.length);
+                imageLogoParaE.setImageBitmap(decodedByte26);
+
+                servis = new Intent(interior.this, TransferirFoto.class);
+                servis.putExtra("comentario", "Logo Parabrisas Frontal");
+                servis.putExtra("id_inspeccion", id_inspeccion);
+                startService(servis);
+
+                int cantFoto14=db.cantidadF(Integer.parseInt(id_inspeccion),"Parabrisas Interior");
+                cantFoto14= cantFoto14 +1;
+                db.insertCantidadFoto(Integer.parseInt(id_inspeccion),"Parabrisas Interior",cantFoto14);
+                contPost14.setText(String.valueOf(cantFoto14));
 
                 break;
             case PHOTO_RADIO:
@@ -2290,10 +2351,13 @@ try {
             imagePanelFueraInteE.setImageBitmap(null);
             btnPanelDentroInteE.setVisibility(View.GONE);
             imagePanelDentroInteE.setVisibility(View.GONE);
+            btnLogoParaFrontalE.setVisibility(View.GONE);
             imagePanelDentroInteE.setImageBitmap(null);
             btnRadioInteriorE.setVisibility(View.GONE);
             imageRadioInteriorE.setVisibility(View.GONE);
             imageRadioInteriorE.setImageBitmap(null);
+            imageLogoParaE.setVisibility(View.GONE);
+            imageLogoParaE.setImageBitmap(null);
             textView38.setVisibility(View.GONE);
             marcaPanel.setVisibility(View.GONE);
             textView42.setVisibility(View.GONE);
@@ -2313,6 +2377,8 @@ try {
             luzCheckEngineE.setVisibility(View.GONE);
             luzTestigoAirE.setVisibility(View.GONE);
             luzTestigoABS.setVisibility(View.GONE);
+            textCant14.setVisibility(View.GONE);
+            contPost14.setVisibility(View.GONE);
             textCant19.setVisibility(View.GONE);
             contPost19.setVisibility(View.GONE);
             textCant20.setVisibility(View.GONE);
@@ -2323,6 +2389,9 @@ try {
             contPost22.setVisibility(View.GONE);
             textCant23.setVisibility(View.GONE);
             contPost23.setVisibility(View.GONE);
+            textCant14.setVisibility(View.GONE);
+            contPost14.setVisibility(View.GONE);
+
 
 
         }
@@ -2448,6 +2517,7 @@ try {
             String imageRadioInterior = db.foto(Integer.parseInt(id),"Foto Radio Interior");
             String imageKilometraje = db.foto(Integer.parseInt(id),"Foto Kilometraje Interior");
             String imageAdicionalInterior = db.foto(Integer.parseInt(id),"Foto panel herramientas");
+            String imageLogoPara = db.foto(Integer.parseInt(id)," Foto Parabrisas Interior");
 
             if(imagePanelFueraInte.length()>3)
             {
@@ -2479,12 +2549,20 @@ try {
                 Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
                 imageAdicionalInteriorE.setImageBitmap(decodedByte);
             }
+            if(imageLogoPara.length()>=3 )
+            {
+                byte[] decodedString = Base64.decode(imageLogoPara, Base64.DEFAULT);
+                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                imageLogoParaE.setImageBitmap(decodedByte);
+            }
 
 
             btnPanelFueraInteE.setVisibility(View.VISIBLE);
             imagePanelFueraInteE.setVisibility(View.VISIBLE);
             btnPanelDentroInteE.setVisibility(View.VISIBLE);
             imagePanelDentroInteE.setVisibility(View.VISIBLE);
+            imageLogoParaE.setVisibility(View.VISIBLE);
+            btnLogoParaFrontalE.setVisibility(View.VISIBLE);
             btnRadioInteriorE.setVisibility(View.VISIBLE);
             imageRadioInteriorE.setVisibility(View.VISIBLE);
             textView38.setVisibility(View.VISIBLE);
@@ -2514,6 +2592,8 @@ try {
             contPost22.setVisibility(View.VISIBLE);
             textCant23.setVisibility(View.VISIBLE);
             contPost23.setVisibility(View.VISIBLE);
+            textCant14.setVisibility(View.VISIBLE);
+            contPost14.setVisibility(View.VISIBLE);
 
         }
     }
@@ -2566,6 +2646,9 @@ try {
             btnPanelDentroInteE.setVisibility(View.GONE);
             imagePanelDentroInteE.setVisibility(View.GONE);
             imagePanelDentroInteE.setImageBitmap(null);
+            imageLogoParaE.setVisibility(View.GONE);
+            imageLogoParaE.setImageBitmap(null);
+            btnLogoParaFrontalE.setVisibility(View.GONE);
             btnRadioInteriorE.setVisibility(View.GONE);
             imageRadioInteriorE.setVisibility(View.GONE);
             imageRadioInteriorE.setImageBitmap(null);
@@ -2598,6 +2681,8 @@ try {
             contPost22.setVisibility(View.GONE);
             textCant23.setVisibility(View.GONE);
             contPost23.setVisibility(View.GONE);
+            textCant14.setVisibility(View.VISIBLE);
+            contPost14.setVisibility(View.VISIBLE);
 
 
             imageRetroElectE.setImageBitmap(null);
@@ -2909,6 +2994,9 @@ try {
             btnPanelDentroInteE.setVisibility(View.GONE);
             imagePanelDentroInteE.setVisibility(View.GONE);
             imagePanelDentroInteE.setImageBitmap(null);
+            imageLogoParaE.setVisibility(View.GONE);
+            imageLogoParaE.setImageBitmap(null);
+            btnLogoParaFrontalE.setVisibility(View.GONE);
             btnRadioInteriorE.setVisibility(View.GONE);
             imageRadioInteriorE.setVisibility(View.GONE);
             imageRadioInteriorE.setImageBitmap(null);
@@ -2939,6 +3027,8 @@ try {
             contPost22.setVisibility(View.GONE);
             textCant23.setVisibility(View.GONE);
             contPost23.setVisibility(View.GONE);
+            textCant14.setVisibility(View.VISIBLE);
+            contPost14.setVisibility(View.VISIBLE);
 
             //luzCheckEngineE.setVisibility(View.GONE);
             //imageLuzCheckEngineE.setVisibility(View.GONE);

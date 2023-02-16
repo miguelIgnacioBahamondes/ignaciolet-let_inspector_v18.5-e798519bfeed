@@ -207,6 +207,13 @@
         <item>no sabe/no responde</item>
     </string-array>
 
+    <string-array name="Dmovimiento">
+        <item>Seleccione...</item>
+        <item>si</item>
+        <item>no</item>
+        <item>no sabe/no responde</item>
+    </string-array>
+
 
 
 </resources>

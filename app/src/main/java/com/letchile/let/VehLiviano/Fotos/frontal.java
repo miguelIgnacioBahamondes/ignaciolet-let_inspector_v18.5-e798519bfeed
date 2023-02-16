@@ -44,7 +44,6 @@ public class frontal extends AppCompatActivity {
     DBprovider db;
     Boolean connec = false;
     private final int PHOTO_FRONTAL = 200;
-    private final int PHOTO_PARABRISAS = 300;
     private final int PHOTO_ADICIONAL = 400;
     private final int PHOTO_DANO = 500;
     private final int PHOTO_TURBO = 600;
@@ -52,11 +51,11 @@ public class frontal extends AppCompatActivity {
     private final int PHOTO_COCO = 800;
     private final int PHOTO_NEBLINERO = 900;
     private final int PHOTO_LOGO = 1000;
-    private Button btnVolverFrontalE,btnVolerSecFrontalE,btnSiguienteFrontalE,btnFrontalE,btnLogoParaFrontalE,btnAdicionalFrontalE,btnFrontalDanoE,btnSeccionUnoFrontalE,btnSeccionDosFrontalE,brnSeccionFos3E;
-    private ImageView imageFrontalE,imageLogoParaE,imageAdicionalFrontalE,imagenFrontalDanoE,imageTurboFrontalE,imageHuencheFrontalE,imageCocoFrE,imageNeblineroE,imageLogoE;
+    private Button btnVolverFrontalE,btnVolerSecFrontalE,btnSiguienteFrontalE,btnFrontalE,btnAdicionalFrontalE,btnFrontalDanoE,btnSeccionUnoFrontalE,btnSeccionDosFrontalE,brnSeccionFos3E;
+    private ImageView imageFrontalE,imageAdicionalFrontalE,imagenFrontalDanoE,imageTurboFrontalE,imageHuencheFrontalE,imageCocoFrE,imageNeblineroE,imageLogoE;
     private CheckBox sistemaTurboFrontalE,huincheFoE,CocoFoE,neblinerosFoE,logoFoE;
     private Spinner spinnerPiezaFrontalE,spinnerDanoFrontalE,spinnerDeducibleFrontalE;
-    private TextView txtPieza,txtTipoDanoE,txtDeducibleE, textCant13,contPost13, textCant14,contPost14, textCant15,contPost15, textCantF,contPostF;
+    private TextView txtPieza,txtTipoDanoE,txtDeducibleE, textCant13,contPost13, textCant15,contPost15, textCantF,contPostF;
     private String mPath;
     private File ruta_sd;
     private String ruta = "";
@@ -83,8 +82,6 @@ public class frontal extends AppCompatActivity {
 
         btnFrontalE = findViewById(R.id.btnFrontalE);
         imageFrontalE = findViewById(R.id.imageFrontalE);
-        btnLogoParaFrontalE = findViewById(R.id.btnLogoParaFrontalE);
-        imageLogoParaE = findViewById(R.id.imageLogoParaE);
         btnAdicionalFrontalE = findViewById(R.id.btnAdicionalFrontalE);
         imageAdicionalFrontalE = findViewById(R.id.imageAdicionalFrontalE);
         btnFrontalDanoE = findViewById(R.id.btnFrontalDanoE);
@@ -114,9 +111,6 @@ public class frontal extends AppCompatActivity {
         contPost13 = findViewById(R.id.contPost13);
         contPost13.setText(String.valueOf(db.cantidadF(Integer.parseInt(id_inspeccion),"Foto Frontal")));
 
-        textCant14 = findViewById(R.id.textCant14);
-        contPost14 = findViewById(R.id.contPost14);
-        contPost14.setText(String.valueOf(db.cantidadF(Integer.parseInt(id_inspeccion),"Logo Parabrisas Frontal")));
 
         textCant15 = findViewById(R.id.textCant15);
         contPost15 = findViewById(R.id.contPost15);
@@ -146,12 +140,6 @@ public class frontal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 funcionCamara(id_inspeccion,"_Foto_Frontal.jpg",PHOTO_FRONTAL);
-            }
-        });
-        btnLogoParaFrontalE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                funcionCamara(id_inspeccion,"_Foto_Parabrisas.jpg",PHOTO_PARABRISAS);
             }
         });
         btnAdicionalFrontalE.setOnClickListener(new View.OnClickListener() {
@@ -270,9 +258,9 @@ public class frontal extends AppCompatActivity {
             public void onClick(View view) {
 
                 String imageFrontal = db.foto(Integer.parseInt(id_inspeccion),"Foto Frontal");
-                String imageLogoPara = db.foto(Integer.parseInt(id_inspeccion),"Logo Parabrisas Frontal");
 
-                if(imageFrontal.length()<4 && imageLogoPara.length()<4 )
+
+                if(imageFrontal.length()<4  )
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(frontal.this);
                     builder.setCancelable(false);
@@ -293,21 +281,6 @@ public class frontal extends AppCompatActivity {
                     builder.setCancelable(false);
                     builder.setTitle("LET Chile");
                     builder.setMessage(Html.fromHtml("<b>Debe Tomar Fotos Obligatorias</b><p><ul><li>- Foto Frontal</li></ul></p>"));
-                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-
-                        }
-                    });
-                    AlertDialog alert = builder.create();
-                    alert.show();
-                }
-                else  if(imageLogoPara.length()<4 )
-                {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(frontal.this);
-                    builder.setCancelable(false);
-                    builder.setTitle("LET Chile");
-                    builder.setMessage(Html.fromHtml("<b>Debe Tomar Fotos Obligatorias</b><p><ul><li>- Foto Logo Parabrisas</li></ul></p>"));
                     builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -396,40 +369,6 @@ public class frontal extends AppCompatActivity {
                         cantFoto13= cantFoto13 +1;
                         db.insertCantidadFoto(Integer.parseInt(id_inspeccion),"Foto Frontal",cantFoto13);
                         contPost13.setText(String.valueOf(cantFoto13));
-
-                        break;
-
-                    case PHOTO_PARABRISAS:
-                        MediaScannerConnection.scanFile(this,
-                                new String[]{mPath}, null,
-                                new MediaScannerConnection.OnScanCompletedListener() {
-                                    @Override
-                                    public void onScanCompleted(String path, Uri uri) {
-                                        Log.i("ExternalStorage", "Scanned " + path + ":");
-                                        Log.i("ExternalStorage", "-> Uri = " + uri);
-                                    }
-                                });
-
-                        Bitmap bitmapParabrisas = BitmapFactory.decodeFile(mPath);
-                        bitmapParabrisas = foto.redimensiomarImagen(bitmapParabrisas);
-
-                        String imagenParabrisas = foto.convertirImagenDano(bitmapParabrisas);
-                        db.insertaFoto(Integer.parseInt(id_inspeccion), db.correlativoFotos(Integer.parseInt(id_inspeccion)), nombreimagen, "Logo Parabrisas Frontal", 0, imagenParabrisas, 0);
-                        imagenParabrisas = "data:image/jpg;base64,"+imagenParabrisas;
-                        String base64Image1 = imagenParabrisas.split(",")[1];
-                        byte[] decodedString1 = Base64.decode(base64Image1, Base64.DEFAULT);
-                        Bitmap decodedByte1 = BitmapFactory.decodeByteArray(decodedString1, 0, decodedString1.length);
-                        imageLogoParaE.setImageBitmap(decodedByte1);
-
-                        servis = new Intent(frontal.this, TransferirFoto.class);
-                        servis.putExtra("comentario", "Logo Parabrisas Frontal");
-                        servis.putExtra("id_inspeccion", id_inspeccion);
-                        startService(servis);
-
-                        int cantFoto14=db.cantidadF(Integer.parseInt(id_inspeccion),"Logo Parabrisas Frontal");
-                        cantFoto14= cantFoto14 +1;
-                        db.insertCantidadFoto(Integer.parseInt(id_inspeccion),"Logo Parabrisas Frontal",cantFoto14);
-                        contPost14.setText(String.valueOf(cantFoto14));
 
                         break;
                     case PHOTO_ADICIONAL:
@@ -682,16 +621,11 @@ public class frontal extends AppCompatActivity {
             btnFrontalE.setVisibility(View.GONE);
             imageFrontalE.setVisibility(View.GONE);
             imageFrontalE.setImageBitmap(null);
-            btnLogoParaFrontalE.setVisibility(View.GONE);
-            imageLogoParaE.setVisibility(View.GONE);
-            imageLogoParaE.setImageBitmap(null);
             btnAdicionalFrontalE.setVisibility(View.GONE);
             imageAdicionalFrontalE.setVisibility(View.GONE);
             imageAdicionalFrontalE.setImageBitmap(null);
             textCant13.setVisibility(View.GONE);
             contPost13.setVisibility(View.GONE);
-            textCant14.setVisibility(View.GONE);
-            contPost14.setVisibility(View.GONE);
             textCant15.setVisibility(View.GONE);
             contPost15.setVisibility(View.GONE);
             linea.setVisibility(View.GONE);
@@ -734,7 +668,6 @@ public class frontal extends AppCompatActivity {
 
 
             String imageFrontal = db.foto(Integer.parseInt(id),"Foto Frontal");
-            String imageLogoPara = db.foto(Integer.parseInt(id),"Logo Parabrisas Frontal");
             String imageAdicionalFrontal = db.foto(Integer.parseInt(id),"Adicional Frontal");
 
             if(imageFrontal.length()>=3 )
@@ -742,12 +675,6 @@ public class frontal extends AppCompatActivity {
                 byte[] decodedString = Base64.decode(imageFrontal, Base64.DEFAULT);
                 Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
                 imageFrontalE.setImageBitmap(decodedByte);
-            }
-            if(imageLogoPara.length()>=3 )
-            {
-                byte[] decodedString = Base64.decode(imageLogoPara, Base64.DEFAULT);
-                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-                imageLogoParaE.setImageBitmap(decodedByte);
             }
             if(imageAdicionalFrontal.length()>=3 )
             {
@@ -759,14 +686,10 @@ public class frontal extends AppCompatActivity {
 
             btnFrontalE.setVisibility(View.VISIBLE);
             imageFrontalE.setVisibility(View.VISIBLE);
-            btnLogoParaFrontalE.setVisibility(View.VISIBLE);
-            imageLogoParaE.setVisibility(View.VISIBLE);
             btnAdicionalFrontalE.setVisibility(View.VISIBLE);
             imageAdicionalFrontalE.setVisibility(View.VISIBLE);
             textCant13.setVisibility(View.VISIBLE);
             contPost13.setVisibility(View.VISIBLE);
-            textCant14.setVisibility(View.VISIBLE);
-            contPost14.setVisibility(View.VISIBLE);
             textCant15.setVisibility(View.VISIBLE);
             contPost15.setVisibility(View.VISIBLE);
             linea.setVisibility(View.VISIBLE);
@@ -796,16 +719,11 @@ public class frontal extends AppCompatActivity {
             btnFrontalE.setVisibility(View.GONE);
             imageFrontalE.setVisibility(View.GONE);
             imageFrontalE.setImageBitmap(null);
-            btnLogoParaFrontalE.setVisibility(View.GONE);
-            imageLogoParaE.setVisibility(View.GONE);
-            imageLogoParaE.setImageBitmap(null);
             btnAdicionalFrontalE.setVisibility(View.GONE);
             imageAdicionalFrontalE.setVisibility(View.GONE);
             imageAdicionalFrontalE.setImageBitmap(null);
             textCant13.setVisibility(View.GONE);
             contPost13.setVisibility(View.GONE);
-            textCant14.setVisibility(View.GONE);
-            contPost14.setVisibility(View.GONE);
             textCant15.setVisibility(View.GONE);
             contPost15.setVisibility(View.GONE);
             linea.setVisibility(View.GONE);
@@ -953,16 +871,11 @@ public class frontal extends AppCompatActivity {
             btnFrontalE.setVisibility(View.GONE);
             imageFrontalE.setVisibility(View.GONE);
             imageFrontalE.setImageBitmap(null);
-            btnLogoParaFrontalE.setVisibility(View.GONE);
-            imageLogoParaE.setVisibility(View.GONE);
-            imageLogoParaE.setImageBitmap(null);
             btnAdicionalFrontalE.setVisibility(View.GONE);
             imageAdicionalFrontalE.setVisibility(View.GONE);
             imageAdicionalFrontalE.setImageBitmap(null);
             textCant13.setVisibility(View.GONE);
             contPost13.setVisibility(View.GONE);
-            textCant14.setVisibility(View.GONE);
-            contPost14.setVisibility(View.GONE);
             textCant15.setVisibility(View.GONE);
             contPost15.setVisibility(View.GONE);
             linea.setVisibility(View.GONE);

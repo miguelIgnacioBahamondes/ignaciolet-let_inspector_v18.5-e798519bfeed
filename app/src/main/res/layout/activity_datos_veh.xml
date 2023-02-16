@@ -411,7 +411,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="49dp"
                         android:layout_marginTop="10dp"
-                        android:text="¿El vehículo es o será usado como trasporte de pasajeros?"
+                        android:text="¿El uso del vehículo ha sido o será para transporte de uso comercial de pasajeros?"
                         android:textColor="@android:color/background_dark"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -441,6 +441,31 @@
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
                         android:spinnerMode="dialog" />
+
+                    <TextView
+                        android:id="@+id/textViewDmovimiento"
+                        android:layout_width="match_parent"
+                        android:layout_height="49dp"
+                        android:layout_marginTop="10dp"
+                        android:text=" ¿El vehículo tiene pérdida total o ha sido comprado en remate?"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_Dmovimiento"
+                        style="@android:style/Widget.Spinner.DropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:spinnerMode="dialog" />
+
+                    <EditText
+                        android:id="@+id/editTextDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="date" />
                 </LinearLayout>
             </ScrollView>
         </RelativeLayout>

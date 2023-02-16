@@ -24,11 +24,11 @@
             android:id="@+id/textObs1"
             android:layout_width="500dp"
             android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/holo_orange_dark"
             android:gravity="center"
             android:text=""
-            android:background="@android:color/holo_orange_dark"
             android:textSize="24sp" />
 
         <Button
@@ -299,6 +299,42 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/txtDireccion"
                         android:visibility="gone" />
+
+
+                    <View
+                        android:id="@+id/linea3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/holo_orange_dark"
+                        />
+
+                    <Button
+                        android:id="@+id/btnAgendar"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="-2dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/boto_redondoselect"
+                        android:text="Agendar"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/btnAgregarHito"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_alignTop="@+id/btnAgregarHito"
+                        android:layout_marginStart="270dp"
+                        android:layout_marginTop="-40dp"
+                        android:layout_toEndOf="@+id/btnAgregarHito"
+                        android:background="@drawable/boto_redondoselect"
+                        android:text="Hito"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="18sp" />
+
+
 
 
                 </LinearLayout>

@@ -69,7 +69,7 @@ public class FotoGeolocalizacion extends AppCompatActivity{
     PropiedadesFoto foto;
     ImageView imagenGeo;
     Boolean connec = false;
-    Button btnFotoGeo,btnContinuar,btnVolverJg;
+    Button btnFotoGeo,btnContinuar,btnVolverJg,btnAgendar;
     Context contexto = this;
     int correlativo = 0;
     String nombreimagen = "",perfil;
@@ -196,6 +196,21 @@ public class FotoGeolocalizacion extends AppCompatActivity{
 
             }
         });
+        btnAgendar = findViewById(R.id.btnAgendar);
+        btnAgendar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(FotoGeolocalizacion.this,"HOLA",Toast.LENGTH_SHORT).show();
+
+                Intent intentA   = new Intent(FotoGeolocalizacion.this,AgendarActivity.class);
+                intentA.putExtra("id_inspeccion",id_inspeccion);
+                startActivity(intentA);
+
+
+            }
+        });
+
 
         //FOOTER
         btnFotoGeo = findViewById(R.id.btnFotoGeo);
