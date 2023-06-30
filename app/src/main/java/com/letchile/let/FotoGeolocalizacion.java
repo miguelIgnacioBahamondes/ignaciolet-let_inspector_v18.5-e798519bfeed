@@ -201,7 +201,7 @@ public class FotoGeolocalizacion extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(FotoGeolocalizacion.this,"HOLA",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(FotoGeolocalizacion.this,"HOLA",Toast.LENGTH_SHORT).show();
 
                 Intent intentA   = new Intent(FotoGeolocalizacion.this,AgendarActivity.class);
                 intentA.putExtra("id_inspeccion",id_inspeccion);

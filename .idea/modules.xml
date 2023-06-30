@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ignaciolet-let_inspector_v15-e798519bfeed.iml" filepath="$PROJECT_DIR$/.idea/modules/ignaciolet-let_inspector_v15-e798519bfeed.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v15-e798519bfeed.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v15-e798519bfeed.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v15-e798519bfeed.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v15-e798519bfeed.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v15-e798519bfeed.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v15-e798519bfeed.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v15-e798519bfeed.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v15-e798519bfeed.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ignaciolet-let_inspector_v18.5-e798519bfeed22.iml" filepath="$PROJECT_DIR$/.idea/modules/ignaciolet-let_inspector_v18.5-e798519bfeed22.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v18.5-e798519bfeed22.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v18.5-e798519bfeed22.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v18.5-e798519bfeed22.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v18.5-e798519bfeed22.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v18.5-e798519bfeed22.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v18.5-e798519bfeed22.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v18.5-e798519bfeed22.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ignaciolet-let_inspector_v18.5-e798519bfeed22.app.unitTest.iml" />
     </modules>
   </component>
 </project>

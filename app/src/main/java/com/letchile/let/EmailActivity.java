@@ -122,6 +122,7 @@ public class EmailActivity extends AppCompatActivity {
                                 Intent servis2 = new Intent(EmailActivity.this, TransmitirOiEmail.class);
                                 servis2.putExtra("id_inspeccion", id_inspeccion);
                                 servis2.putExtra("email", email);
+                                //context.startService(servis2);
                                 startService(servis2);
 
                                 //Toast.makeText(CamposAnexosActivity.this, "Inspección " + id_inspeccion , Toast.LENGTH_LONG).show();

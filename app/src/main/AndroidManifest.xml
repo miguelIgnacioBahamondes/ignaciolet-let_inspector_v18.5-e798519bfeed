@@ -112,6 +112,11 @@
         <activity
             android:name=".VehPesado.SeccionVpActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".AgendarActivity"
+            android:screenOrientation="portrait" />
+
+
 
         <service android:name=".Servicios.TransferirFoto" />
         <service android:name=".Servicios.TransferirFotoV2" />
@@ -119,6 +124,7 @@
         <service android:name=".Servicios.TransferirFotoFallida" />
         <service android:name=".Servicios.TransferirInspeccionFallida" />
         <service android:name=".Servicios.TransferirGeolocalizacion" />
+        <service android:name=".Servicios.AgendarInspeccion" />
 
         <activity
             android:name=".VehLiviano.Fotos.Posterior"
