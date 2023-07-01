@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
@@ -20,9 +22,13 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.text.Html;
 import android.Manifest;
@@ -32,10 +38,13 @@ import android.location.LocationManager;
 import android.location.Geocoder;
 import android.location.Address;
 import android.widget.Toast;
+import android.text.InputType;
 
 import com.letchile.let.BD.DBprovider;
 import com.letchile.let.Clases.Localizacion;
 import com.letchile.let.Clases.PropiedadesFoto;
+import com.letchile.let.Servicios.AgendarInspeccion;
+import com.letchile.let.Servicios.AgregarHito;
 import com.letchile.let.Servicios.ConexionInternet;
 import com.letchile.let.Servicios.TransferirFoto;
 import com.letchile.let.Servicios.TransferirGeolocalizacion;
@@ -64,19 +73,16 @@ public class FotoGeolocalizacion extends AppCompatActivity{
     private final int MY_PERMISSIONS = 100;
     private final int PHOTO_GEO = 250;
     private File ruta_fa;
-    private String ruta = "";
+    private String ruta = "", m_Text = "";
     private String mPath;
     PropiedadesFoto foto;
     ImageView imagenGeo;
     Boolean connec = false;
-    Button btnFotoGeo,btnContinuar,btnVolverJg,btnAgendar;
+    Button btnFotoGeo,btnContinuar,btnVolverJg,btnAgendar, botonAgregarHito;
     Context contexto = this;
     int correlativo = 0;
     String nombreimagen = "",perfil;
     TextView  textCantG,contPostG,latitud,longitud,direccion, fono, contacto, comentario;
-
-
-
 
     public FotoGeolocalizacion(){db = new DBprovider(this);foto = new PropiedadesFoto(this);}
 
@@ -149,8 +155,6 @@ public class FotoGeolocalizacion extends AppCompatActivity{
             }
         });
 
-
-
         btnContinuar = findViewById(R.id.btnSigObsJg);
         btnContinuar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -198,78 +202,147 @@ public class FotoGeolocalizacion extends AppCompatActivity{
         });
         btnAgendar = findViewById(R.id.btnAgendar);
         btnAgendar.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 //Toast.makeText(FotoGeolocalizacion.this,"HOLA",Toast.LENGTH_SHORT).show();
-
                 Intent intentA   = new Intent(FotoGeolocalizacion.this,AgendarActivity.class);
                 intentA.putExtra("id_inspeccion",id_inspeccion);
                 startActivity(intentA);
-
-
             }
         });
+
+        botonAgregarHito = findViewById(R.id.btnAgregarHito);
+        botonAgregarHito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder dialog = new AlertDialog.Builder(FotoGeolocalizacion.this);
+                TextView title = new TextView(FotoGeolocalizacion.this);
+                title.setTextColor(ContextCompat.getColor(FotoGeolocalizacion.this, android.R.color.black));
+                title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                title.setTypeface(Typeface.DEFAULT_BOLD);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                lp.setMargins(0, 20, 0, 0);
+                title.setPadding(0,30,0,60);
+                title.setLayoutParams(lp);
+                title.setText("Agregar Hito");
+                title.setGravity(Gravity.CENTER);
+                dialog.setCustomTitle(title);
+                //dialog.setMessage("Dialog box with custom title view ");
+                final EditText input = new EditText(FotoGeolocalizacion.this);
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                input.setHint("Escriba la actualización");
+                dialog.setView(input);
+
+                // Set up the buttons
+                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        int estadoOI1 = db.estadoInspeccion(Integer.parseInt(id_inspeccion));
+                        Log.e("Parametros agendamiento", "ESTADO 1° "+String.valueOf(estadoOI1));
+
+                        m_Text = input.getText().toString();
+                        Log.i("modal","el texto que llego es: "+m_Text);
+                        Intent servis2 = new Intent(FotoGeolocalizacion.this, AgregarHito.class);
+                        servis2.putExtra("id_inspeccion", id_inspeccion);
+                        servis2.putExtra("comentario", m_Text);
+                        startService(servis2);
+
+
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            /*se hace un "sleep" para que alcance a gatillzarse el servicio y actualizacion de estado, antes de volver a consultar y verificar que todo esta OK*/
+                            @Override
+                            public void run() {
+                                int estadoOI2 = db.estadoInspeccion(Integer.parseInt(id_inspeccion));
+                                Log.e("Parametros agendamiento", "ESTADO 2° "+String.valueOf(estadoOI2));
+
+                                if(estadoOI2==99) {
+                                    /*cuando el estado es 99 osea si se gatillo el servicio de Agregar hito, reiniciamos el estado de la oi a 0 como estaba en un comienzo.*/
+                                    db.cambiarEstadoInspeccion(Integer.parseInt(id_inspeccion),0);
+                                    int estadoOI3 = db.estadoInspeccion(Integer.parseInt(id_inspeccion));
+                                    Log.e("Parametros agendamiento", "ESTADO 3° "+String.valueOf(estadoOI3));
+
+                                    Log.e("Parametros agendamiento", "TODO PERFECTO, SE DESPLIEGA TOASTR ");
+                                    Toast.makeText(FotoGeolocalizacion.this,"Hito agregado correctamente.",Toast.LENGTH_LONG).show();
+                                }else{
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(FotoGeolocalizacion.this);
+                                    builder.setCancelable(false);
+                                    builder.setTitle("LET Chile");
+                                    builder.setMessage(Html.fromHtml("Error al intentar agregar hito, si el problema persiste contactarse con soporte."));
+                                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                                        }
+                                    });
+                                    AlertDialog alert = builder.create();
+                                    alert.show();
+                                }
+                            }
+                        }, 2000);
+
+
+
+
+
+
+
+
+
+                    }
+                });
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                dialog.show();
+            }
+        });
+
 
 
         //FOOTER
         btnFotoGeo = findViewById(R.id.btnFotoGeo);
         btnFotoGeo.setOnClickListener(new View.OnClickListener() {
-
             final boolean gpsActivado2=checkIfLocationOpened();
             @Override
             public void onClick(View v) {
-
                 int cantGeo=db.cantidadF(Integer.parseInt(id_inspeccion),"Foto Geolocalizacion");
-
-
 
                 if(cantGeo>=1)
                 {
                     Toast.makeText(FotoGeolocalizacion.this,"Ya existe fotografía del lugar en la OI "+ Integer.parseInt(id_inspeccion),Toast.LENGTH_SHORT).show();
-
                 }
                 else
                 {
                     if(gpsActivado2 == true) {
-
                         openCamara(Integer.parseInt(id_inspeccion));
                     }
                     else{
-
                         Toast.makeText(FotoGeolocalizacion.this,"Debe activar GPS",Toast.LENGTH_SHORT).show();
-
                     }
-
                 }
-
-
             }
         });
-
-
             //image view
         String imagenG = db.foto(Integer.parseInt(id_inspeccion),"Foto Geolocalizacion");
-
 
         byte[] decodedString = Base64.decode(imagenG, Base64.DEFAULT);
         Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
         imagenGeo.setImageBitmap(decodedByte);
         imagenGeo.setVisibility(View.VISIBLE);
 
-
-
         //codigo geolocalizacion
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
-
         } else {
             locationStart();
-
         }
-
-
-
     }
 
     private boolean checkIfLocationOpened() {
@@ -291,7 +364,6 @@ public class FotoGeolocalizacion extends AppCompatActivity{
         final boolean gpsEnabled = mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
        if (!this.checkIfLocationOpened()) {
-
             Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
             startActivity(settingsIntent);
         }
@@ -304,8 +376,6 @@ public class FotoGeolocalizacion extends AppCompatActivity{
         mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) Local);
         latitud.setText("Localización agregada");
         direccion.setText("");
-
-
     }
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == 1000) {
@@ -316,18 +386,13 @@ public class FotoGeolocalizacion extends AppCompatActivity{
         }
     }
 
-
-
     public void setLocation(Location loc) {
         //Obtener la direccion de la calle a partir de la latitud y la longitud
         if (loc.getLatitude() != 0.0 && loc.getLongitude() != 0.0) {
-
             try {
                 Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-
                 if(connec)
                 {
-
                     //Log.i("conec","conec");
                     List<Address> list = geocoder.getFromLocation(
                             loc.getLatitude(), loc.getLongitude(), 1);
@@ -337,7 +402,6 @@ public class FotoGeolocalizacion extends AppCompatActivity{
                         longitud.setText(Double.toString(loc.getLongitude()));
                         latitud.setText(Double.toString(loc.getLatitude()));
                         direccion.setText(DirCalle.getAddressLine(0));
-
                     //    Log.i("LOCALIZACION: ", direccion.toString());
                     }
                 }
@@ -347,11 +411,8 @@ public class FotoGeolocalizacion extends AppCompatActivity{
                     longitud.setText(Double.toString(loc.getLongitude()));
                     latitud.setText(Double.toString(loc.getLatitude()));
                     direccion.setText("ERROR AL OBTENER LA DIRECCION");
-
                  //   Log.i("LOCALIZACION: ", direccion.getText().toString());
                 }
-
-
             } catch (IOException e) {
                // e.printStackTrace();
                Log.i("LOCALIZACION", "ERROR - CATCH EXCEPTION" + e);
@@ -363,24 +424,18 @@ public class FotoGeolocalizacion extends AppCompatActivity{
 
 
     private void openCamara(int id_inspeccion){
-
-
         ruta_fa = Environment.getExternalStorageDirectory();
         File file = new File(ruta_fa.toString() + '/' + id_inspeccion);//(Environment.getExternalStorageDirectory(), MEDIA_DIRECTORY);
         boolean isDirectoryCreated = file.exists();
 
         if (!isDirectoryCreated)
             isDirectoryCreated = file.mkdirs();
-
-
             Log.i("camara","camara" +  file.mkdirs());
 
             if (isDirectoryCreated) {
-
                 Log.i("camarass","camarass" +  isDirectoryCreated );
                 correlativo = db.correlativoFotosFallida(id_inspeccion);
                 nombreimagen = String.valueOf(id_inspeccion) + "_" + String.valueOf(correlativo) + "_FotoGeo.jpg";
-
                 ruta = file.toString() + "/" + nombreimagen;
                 mPath = ruta;
 

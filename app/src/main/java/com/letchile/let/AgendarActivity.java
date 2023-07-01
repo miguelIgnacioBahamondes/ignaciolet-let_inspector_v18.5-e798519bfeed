@@ -474,6 +474,11 @@ public class AgendarActivity extends AppCompatActivity {
                         Log.e("Parametros agendamiento", "ESTADO 3° "+String.valueOf(estadoOI2));
 
                         if(estadoOI2==4) {
+                            /*cuando el estado es 4 osea si se gatillo el servicio de crear la cita, reiniciamos el estado de la oi a 0 como estaba en un comienzo.*/
+                            db.cambiarEstadoInspeccion(Integer.parseInt(id_inspeccion),0);
+                            int estadoOI3 = db.estadoInspeccion(Integer.parseInt(id_inspeccion));
+                            Log.e("Parametros agendamiento", "ESTADO 4° "+String.valueOf(estadoOI3));
+
                             /*REDIRIGE AL MENU PRINCIPAL DONDE ESTAN LAS OI PENDIENTES...*/
                             Intent seccion = new Intent(AgendarActivity.this, InsPendientesActivity.class);
                             seccion.putExtra("id_inspeccion",id_inspeccion);

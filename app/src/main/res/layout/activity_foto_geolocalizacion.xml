@@ -316,7 +316,7 @@
                         android:layout_marginStart="-2dp"
                         android:layout_marginTop="0dp"
                         android:background="@drawable/boto_redondoselect"
-                        android:text="Agendar"
+                        android:text="Agendar Cita"
                         android:textColor="@android:color/background_light"
                         android:textSize="18sp" />
 
@@ -330,7 +330,7 @@
                         android:layout_marginTop="-40dp"
                         android:layout_toEndOf="@+id/btnAgregarHito"
                         android:background="@drawable/boto_redondoselect"
-                        android:text="Hito"
+                        android:text="Agregar Hito"
                         android:textColor="@android:color/background_light"
                         android:textSize="18sp" />
 
