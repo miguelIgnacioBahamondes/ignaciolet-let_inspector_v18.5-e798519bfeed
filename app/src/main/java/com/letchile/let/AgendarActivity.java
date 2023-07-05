@@ -105,38 +105,6 @@ public class AgendarActivity extends AppCompatActivity {
         direcion = findViewById(R.id.direccionAgenda);
         txtComentarioAgenda = findViewById(R.id.comentarioAgenda);
 
-
-           /*
-        Toast.makeText(AgendarActivity.this,"hola",Toast.LENGTH_SHORT).show();
-        Date currentTime = Calendar.getInstance().getTime();
-
-        connec = new ConexionInternet(this).isConnectingToInternet();
-        Bundle bundle = getIntent().getExtras();
-        final String id_inspeccion=bundle.getString("id_inspeccion");
-
-
-        perfil = db.obtenerPerfil();
-        // String[][] datosInspeccion=db.BuscaDatosInspeccion(id_inspeccion);
-
-
-        String[][] datosInspeccion=db.BuscaDatosInspeccion(id_inspeccion);
-
-        fono = findViewById(R.id.fono_inicio);
-        fono.setText(datosInspeccion[0][2]);
-
-
-        final Button btnVolverInspJg = findViewById(R.id.btnVolverInspJg);
-        btnVolverInspJg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent( AgendarActivity.this, InsPendientesActivity.class);
-                intent.putExtra("id_inspeccion",id_inspeccion);
-
-                startActivity(intent);
-            }
-        });
-        */
         // AUTOCOMPLETAR REGION
         String regionInicial2=db.obtenerRegion(db.accesorio(Integer.parseInt(id_inspeccion),359).toString());
         final AutoCompleteTextView region = (AutoCompleteTextView) findViewById(R.id.regionSpinnerMQ);
@@ -210,7 +178,8 @@ public class AgendarActivity extends AppCompatActivity {
                 public CharSequence fixText (CharSequence invalidText){
                     //If .isValid() returns false then the code comes here
                     //do whatever way you want to fix in the users input and  return it
-                    return "Comuna inválida";
+                    Toast.makeText(AgendarActivity.this, "Debe ingresar comuna", Toast.LENGTH_LONG).show();
+                    return invalidText.toString();
                 }
             });
         }
@@ -225,15 +194,22 @@ public class AgendarActivity extends AppCompatActivity {
     Date currenTime = Calendar.getInstance().getTime();
     calendarioAgenda.setMinDate(currenTime.getTime());
 
-    /*calendarioAgenda.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+    long selectedDate = calendarioAgenda.getDate();
+    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+    String dateString = formatter.format(new Date(selectedDate));
+    Log.i("fecha INICIADA =>", dateString);
+    fechaseleccionada = dateString;
+
+    calendarioAgenda.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
         @Override
         public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int dayOfMonth) {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
             String selectedDates = sdf.format(new Date(year-1900,month,dayOfMonth));
-            //Log.i("calendario =>",selectedDates);
+            Log.i("calendario =>",selectedDates);
+            fechaseleccionada = selectedDates;
             //dateTest.setText(selectedDates);
         }
-    });*/
+    });
 
     EditText txthoraInicio = (EditText) findViewById(R.id.horaInicio);
     txthoraInicio.setOnFocusChangeListener(new OnFocusChangeListener() {
@@ -397,17 +373,14 @@ public class AgendarActivity extends AppCompatActivity {
                 }
             }
 
-            /*long selectedDate = calendarioAgenda.getDate();
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-            String dateString = formatter.format(new Date(selectedDate));
-            Log.i("fecha INICIADA =>", dateString);*/
-            calendarioAgenda.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+
+            /*calendarioAgenda.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
                 @Override
                 public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                     fechaseleccionada = String.valueOf(dayOfMonth)+"/"+String.valueOf(month)+"/"+String.valueOf(year);
                     Log.i("fecha SELECCIONADA =>", fechaseleccionada);
                 }
-            });
+            });*/
 
             if(calendarioAgenda.toString().equals("")){
                 mensajeError = mensajeError+"- Debe seleccionar una fecha. <br/>";
@@ -420,13 +393,13 @@ public class AgendarActivity extends AppCompatActivity {
                 }
             }
 
-            if(txthoraInicio.getText().toString().trim().equals("") || txtMinutosInicio.getText().toString().trim().equals("")){
+            if(txthoraInicio.getText().toString().trim().equals("") || txtMinutosInicio.getText().toString().trim().equals("") || txthoraInicio.getText().toString().trim().length()<2 || txtMinutosInicio.getText().toString().trim().length()<2){
                 mensajeError = mensajeError+"- Debe ingresar horario inicio de la cita. <br/>";
                 txthoraInicio.requestFocus();
                 txtMinutosInicio.requestFocus();
                 txtComentarioAgenda.requestFocus();
             }
-            if(txthoraFin.getText().toString().trim().equals("") || txtMinutosFin.getText().toString().trim().equals("")){
+            if(txthoraFin.getText().toString().trim().equals("") || txtMinutosFin.getText().toString().trim().equals("") || txthoraFin.getText().toString().trim().length()<2 || txtMinutosFin.getText().toString().trim().length()<2){
                 mensajeError = mensajeError+"- Debe ingresar horario fin de la cita. <br/>";
                 txthoraFin.requestFocus();
                 txtMinutosFin.requestFocus();

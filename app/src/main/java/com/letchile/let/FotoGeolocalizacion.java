@@ -239,58 +239,52 @@ public class FotoGeolocalizacion extends AppCompatActivity{
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        int estadoOI1 = db.estadoInspeccion(Integer.parseInt(id_inspeccion));
-                        Log.e("Parametros agendamiento", "ESTADO 1° "+String.valueOf(estadoOI1));
-
                         m_Text = input.getText().toString();
-                        Log.i("modal","el texto que llego es: "+m_Text);
-                        Intent servis2 = new Intent(FotoGeolocalizacion.this, AgregarHito.class);
-                        servis2.putExtra("id_inspeccion", id_inspeccion);
-                        servis2.putExtra("comentario", m_Text);
-                        startService(servis2);
+                        if(m_Text.equals("")){
+                            Toast.makeText(FotoGeolocalizacion.this, "Por favor agregar un comentario para el hito.", Toast.LENGTH_LONG).show();
+                        }else {
+                            int estadoOI1 = db.estadoInspeccion(Integer.parseInt(id_inspeccion));
+                            Log.e("Parametros agendamiento", "ESTADO 1° " + String.valueOf(estadoOI1));
 
+                            Log.i("modal", "el texto que llego es: " + m_Text);
+                            Intent servis2 = new Intent(FotoGeolocalizacion.this, AgregarHito.class);
+                            servis2.putExtra("id_inspeccion", id_inspeccion);
+                            servis2.putExtra("comentario", m_Text);
+                            startService(servis2);
 
-                        Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {
-                            /*se hace un "sleep" para que alcance a gatillzarse el servicio y actualizacion de estado, antes de volver a consultar y verificar que todo esta OK*/
-                            @Override
-                            public void run() {
-                                int estadoOI2 = db.estadoInspeccion(Integer.parseInt(id_inspeccion));
-                                Log.e("Parametros agendamiento", "ESTADO 2° "+String.valueOf(estadoOI2));
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                /*se hace un "sleep" para que alcance a gatillzarse el servicio y actualizacion de estado, antes de volver a consultar y verificar que todo esta OK*/
+                                @Override
+                                public void run() {
+                                    int estadoOI2 = db.estadoInspeccion(Integer.parseInt(id_inspeccion));
+                                    Log.e("Parametros agendamiento", "ESTADO 2° " + String.valueOf(estadoOI2));
 
-                                if(estadoOI2==99) {
-                                    /*cuando el estado es 99 osea si se gatillo el servicio de Agregar hito, reiniciamos el estado de la oi a 0 como estaba en un comienzo.*/
-                                    db.cambiarEstadoInspeccion(Integer.parseInt(id_inspeccion),0);
-                                    int estadoOI3 = db.estadoInspeccion(Integer.parseInt(id_inspeccion));
-                                    Log.e("Parametros agendamiento", "ESTADO 3° "+String.valueOf(estadoOI3));
+                                    if (estadoOI2 == 99) {
+                                        /*cuando el estado es 99 osea si se gatillo el servicio de Agregar hito, reiniciamos el estado de la oi a 0 como estaba en un comienzo.*/
+                                        db.cambiarEstadoInspeccion(Integer.parseInt(id_inspeccion), 0);
+                                        int estadoOI3 = db.estadoInspeccion(Integer.parseInt(id_inspeccion));
+                                        Log.e("Parametros agendamiento", "ESTADO 3° " + String.valueOf(estadoOI3));
 
-                                    Log.e("Parametros agendamiento", "TODO PERFECTO, SE DESPLIEGA TOASTR ");
-                                    Toast.makeText(FotoGeolocalizacion.this,"Hito agregado correctamente.",Toast.LENGTH_LONG).show();
-                                }else{
-                                    AlertDialog.Builder builder = new AlertDialog.Builder(FotoGeolocalizacion.this);
-                                    builder.setCancelable(false);
-                                    builder.setTitle("LET Chile");
-                                    builder.setMessage(Html.fromHtml("Error al intentar agregar hito, si el problema persiste contactarse con soporte."));
-                                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                        Log.e("Parametros agendamiento", "TODO PERFECTO, SE DESPLIEGA TOASTR ");
+                                        Toast.makeText(FotoGeolocalizacion.this, "Hito agregado correctamente.", Toast.LENGTH_LONG).show();
+                                    } else {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(FotoGeolocalizacion.this);
+                                        builder.setCancelable(false);
+                                        builder.setTitle("LET Chile");
+                                        builder.setMessage(Html.fromHtml("Error al intentar agregar hito, si el problema persiste contactarse con soporte."));
+                                        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
 
-                                        }
-                                    });
-                                    AlertDialog alert = builder.create();
-                                    alert.show();
+                                            }
+                                        });
+                                        AlertDialog alert = builder.create();
+                                        alert.show();
+                                    }
                                 }
-                            }
-                        }, 2000);
-
-
-
-
-
-
-
-
-
+                            }, 2000);
+                        }
                     }
                 });
                 dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
